@@ -5,7 +5,6 @@
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "suppressNotifications": ["prIgnoreNotification"],
   "rebaseWhen": "conflicted",
-  "schedule": ["every sunday"],
   "pre-commit": {
     "enabled": true
   },
@@ -16,29 +15,21 @@
     "fileMatch": ["cluster/.+\\.ya?ml$"]
   },
   "kubernetes": {
-    "fileMatch": [
-      "cluster/.+\\.ya?ml$",
-      "provision/ansible/.+\\.ya?ml.j2$"
-    ]
+    "fileMatch": ["cluster/.+\\.ya?ml$", "provision/ansible/.+\\.ya?ml.j2$"]
   },
   "regexManagers": [
     {
       "description": "Process CRD dependencies",
       "fileMatch": ["cluster/crds/.+\\.ya?ml$"],
       "matchStrings": [
-        // GitRepository and Flux Kustomization where 'Git release/tag' matches 'Helm' version
         "registryUrl=(?<registryUrl>\\S+) chart=(?<depName>\\S+)\n.*?(?<currentValue>[^-\\s]*)\n",
-        // Kustomization where 'GitHub release artifact URL' matches 'Docker image' version
-        "datasource=(?<datasource>\\S+) image=(?<depName>\\S+)\n.*?-\\s(.*?)\/(?<currentValue>[^/]+)\/[^/]+\n"
+        "datasource=(?<datasource>\\S+) image=(?<depName>\\S+)\n.*?-\\s(.*?)/(?<currentValue>[^/]+)/[^/]+\n"
       ],
       "datasourceTemplate": "{{#if datasource}}{{{datasource}}}{{else}}helm{{/if}}"
     },
     {
       "description": "Process various other dependencies",
-      "fileMatch": [
-        "provision/ansible/.+\\.ya?ml$",
-        "cluster/.+\\.ya?ml$"
-      ],
+      "fileMatch": ["provision/ansible/.+\\.ya?ml$", "cluster/.+\\.ya?ml$"],
       "matchStrings": [
         "datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>\\S+))?\n.*?\"(?<currentValue>.*)\"\n"
       ],
@@ -53,13 +44,11 @@
       "matchDatasources": ["kubernetes-api"],
       "enabled": false
     },
-    // setup datasources
     {
       "matchDatasources": ["helm"],
       "separateMinorPatch": true,
       "ignoreDeprecated": true
     },
-    // global docker datasource settings
     {
       "matchDatasources": ["docker"],
       "enabled": true,
@@ -75,7 +64,6 @@
       "group": { "commitMessageTopic": "{{{groupName}}} group" },
       "separateMinorPatch": true
     },
-    // add labels according to package and update types
     {
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["major"],
