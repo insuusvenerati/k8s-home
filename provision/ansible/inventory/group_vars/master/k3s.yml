@@ -20,7 +20,7 @@ k3s_server:
     # Disable traefik - replaced with ingress-nginx
     - traefik
     # Disable servicelb - replaced with metallb and install with Flux
-    - servicelb
+    # - servicelb # 11/16/23 re enable klipper until metallb can work
     # Disable metrics-server - installed with Flux
     - metrics-server
   disable-network-policy: true
