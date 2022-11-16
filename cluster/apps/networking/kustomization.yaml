@@ -6,6 +6,6 @@ resources:
   - cloudflare-ddns
   - external-dns
   - ingress-nginx
-  - metallb
+  # - metallb #Disable and use klipper for now
   - k8s-gateway
   - cert-manager
