@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cloudflared
+  namespace: default
 spec:
   selector:
     matchLabels:
@@ -76,6 +77,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: cloudflared
+  namespace: default
 data:
   config.yaml: |
     # Name of the tunnel you want to run
