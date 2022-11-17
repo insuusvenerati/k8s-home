@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    creationTimestamp: null
+    name: wireguard-config
+data:
+    vpnConfigFile: ENC[AES256_GCM,data:W9ov4CqcVLi++F58d8Vrws5iYXqs9PykoNLqwE9bUwItrLbFIlKygOgNjThomUJAXLYprg0+uJP4CJx4jVA0ioYVcjhPcoUgKbvEpTSmenUESIPgUHD4m/Snb6DzkUZJvEwdHPx2LE+BMujPXdOFucBRPs9eYLevdZPf6BxNtOolSR0pfZedarv60F5FiflMWiMB3DrV12aLXzOrZcrmTGEE9ESZYVymkwIwY+/IHWW5qYgIK3ZXjMIq0/n9AZxktTBTwH/kl37s3a/7Eqz0cDJ/vd/OAgP7WLhvHKglTSJyUKe2sd4MH6AudernxL8srmtF8xqaKC0f9cwbdza05piICNN+jGOq4kFrnIxfTJY7vBZmRM0B4MmCdOQOncL0+lKIJCaPoz9u49jj0vjiPRhhWYK/XuZzD9NJL5aUlkJZvqPamF8w1KzUOHoMsVbysL0uYfZpOuDnyJ2UukPQuV0WR2eKXrmc3QNsJtW8/ziRqJLvtZRRH0DzUvb+EKkePAqODGNjIgws6LbGFXQmJej/ZA5EO1/s4ceZ7rB/F4+bIzC87Gj1jZqKXDEXSnBljfLP37soEWIzlLE+vcoayk4b0sRrShM8OKjg/LxsV/zvgJGV/+NMx2GUQuwf+x/BG6mboCaWJLkMwxyCDxhvE870pfO4qxJsuiVvmQMMCTIfIwMoBKpGUw1tpf0kwueW+/4RufBY2LXGc1oYKCtFBrlm4VriQcGZQeEzMKa6GvbO815OIvNnORfx0WW64TMB0XLJByrPKuEgRCNg4e4PDCHOq83LM26geaIXLhK4pA5bIgZmUl8tW5YJvOSortzWD4W3qtavqRyJAIU32WrhG0/oCZy2hTIsTCq2gzWAgzUA1kdCSYu0XJw0gQvgGQj3ZGqU7tVVv6HULXREkxrdijNoWRfQrYUL9gl+4yHUbjKdvUECAu5ndzdUkhVAlczHSPokPHL9sZzyDJD6eQUdj1vE08SeGvvW9NZqIku0u6jossEmj+pX9WOB0NRYHq0r+Iv9KtsBSOjLxaGqBjUXqINkfVw13RqBc12MN4qGF6ClzbRXP4CkUD64ABaL2aLdRXtV6ECY1R/0YkXccwN+h8zemOkvDQyoBcZaSSiItxHcMwgUazupRlJSe39nMloWYsIYiPjHPE3y8x8vmuiCBJiA6Uuhgn408hE+GSfPq5Lw+ybqdy3JQdGIfId4IF6w,iv:xCv5971RnAOF2KYyZRjy/xSgBNQbs3zPw/dx/gpN1j0=,tag:6KIOpjc94bXCRqupb0UYkg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age19gpymng4jmuvlf2h3fupa95lptysdpagxz5f7qs8sr8zh2m9zpcqjgucdp
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBYWFZoR21nUjVQZmZITG5U
+            UTdTTzg4dDlDaHV3T01qL08xRWd1VmhvNlE0Ci95QkhLMVozTUJwdUVyRklFbTIr
+            d0M1MFpTV0tSY0pvcGtlYlZXU3g4NWsKLS0tIHp1RW1rTEovN0RVWTExSHRyVFZj
+            R29NQnRSVnlSQXFqYk9ud3NQdGw4b3cK+r8nPBrz31tZgt06JqoEJskNWOtGE/8i
+            jyRu82PvEI7CT09ZN4OoX/8mGcn/J1tAjxuDHjlTUnTriw5nNw9ZhA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2022-11-17T18:04:10Z"
+    mac: ENC[AES256_GCM,data:ZHqhJ/GOz4ggDFe1cymAwla7m0GGD9stvrdRT5NDZgShTQCRmEkLs0L3tf1/1JwzW59JqXNrMg4n4p0N+FmA675nm95dYchqnZTXpKgKNoYltjeIIjFaglG89A0ET3C81spA/BEpuMnW3mBHNejhtFr5x7zAw7FiKNKq3u6OyzQ=,iv:+0+Jv3mKVerLaiK4+mU8t9J2hNsSA8DvygJCTSunhBo=,tag:UQXgbcsGBHl/OUFyD0zfZQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3

@@ -1,0 +1,76 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: qbittorrent
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: qbittorrent
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+        namespace: flux-system
+      version: 13.5.2
+  interval: 10m0s
+  values:
+    env:
+      TZ: America/Chicago
+      WAIT_FOR_VPN: true
+    image:
+      repository: ghcr.io/k8s-at-home/qbittorrent
+      tag: v4.4.3.1
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-production
+          # External DNS
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          external-dns/is-public: "false"
+          hajimari.io/enable: "true"
+        hosts:
+          - host: &host qbittorrent.${SECRET_DOMAIN}
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - *host
+            secretName: qbittorrent-tls
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 100m
+            memory: 128Mi
+    persistence:
+      downloads:
+        enabled: true
+        mountPath: /downloads
+        size: 1Gi
+        storageClass: nfs-client
+        accessModes: ReadWriteMany
+        existingClaim: media-pvc
+        subPath: downloads
+      media:
+        enabled: false
+    addons:
+      vpn:
+        enabled: true
+        type: wireguard
+        wireguard:
+          image:
+            repository: ghcr.io/k8s-at-home/wireguard
+            tag: v1.0.20210914
+        configFileSecret: wireguard-config
+        scripts:
+          up: |-
+            #!/bin/bash
+            echo "connected" > /shared/vpnstatus
+          down: |-
+            #!/bin/bash
+            echo "disconnected" > /shared/vpnstatus

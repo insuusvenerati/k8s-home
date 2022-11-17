@@ -8,3 +8,4 @@ resources:
   - reloader
   - cloudflared
   - plex
+  - qbitorrent
