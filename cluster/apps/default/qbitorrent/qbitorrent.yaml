@@ -36,6 +36,7 @@ spec:
           cert-manager.io/cluster-issuer: letsencrypt-production
           hajimari.io/enable: "true"
           nginx.ingress.kubernetes.io/whitelist-source-range: "10.0.0.0/8,172.16.0.0/12,192.168.1.0/16"
+          nginx.ingress.kubernetes.io/ssl-passthrough: "true"
         hosts:
           - host: &host qbittorrent.${SECRET_DOMAIN}
             paths:
