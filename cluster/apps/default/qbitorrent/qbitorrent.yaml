@@ -22,6 +22,9 @@ spec:
     image:
       repository: ghcr.io/onedr0p/qbittorrent
       tag: 4.4.5
+    probes:
+      startup:
+        enabled: false
     ingress:
       main:
         enabled: true
@@ -89,7 +92,7 @@ spec:
               command:
                 - sh
                 - -c
-                - if [ $(curl -s https://ipinfo.io/region) == 'Florida' ]; then exit $?; else exit 0; fi
+                - if [ $(curl -s https://ipinfo.io/region) != 'Florida' ]; then exit 0; else exit $?; fi
             initialDelaySeconds: 30
             periodSeconds: 60
             failureThreshold: 1
