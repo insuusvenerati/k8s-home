@@ -58,6 +58,10 @@ spec:
         subPath: downloads
       media:
         enabled: false
+      shared:
+        enabled: true
+        type: emptyDir
+        mountPath: /shared
     addons:
       vpn:
         enabled: true
