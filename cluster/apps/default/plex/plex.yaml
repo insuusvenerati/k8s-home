@@ -19,11 +19,7 @@ spec:
     env:
       TZ: America/Chicago
       PLEX_PREFERENCE_1: "FriendlyName=plex-kubernetes"
-      PLEX_CLAIM:
-        valueFrom:
-          secretKeyRef:
-            name: plex-claim
-            key: claim
+      PLEX_CLAIM: "claim-KErGJtQp_vJ-Max_716a"
     ingress:
       main:
         enabled: true
