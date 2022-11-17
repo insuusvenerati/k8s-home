@@ -5,6 +5,7 @@ kind: Secret
 metadata:
     creationTimestamp: null
     name: wireguard-config
+    namespace: default
 sops:
     kms: []
     gcp_kms: []
