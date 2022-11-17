@@ -10,3 +10,4 @@ resources:
   - plex
   - qbitorrent
   - overseerr
+  - radarr
