@@ -18,6 +18,7 @@ spec:
   values:
     env:
       TZ: America/Chicago
+      WAIT_FOR_VPN: true
     image:
       repository: ghcr.io/onedr0p/qbittorrent
       tag: 4.4.5
@@ -51,8 +52,6 @@ spec:
             cpu: 100m
             memory: 128Mi
     persistence:
-      config:
-        enabled: false
       downloads:
         enabled: true
         mountPath: /downloads
@@ -69,7 +68,7 @@ spec:
         mountPath: /shared
     addons:
       vpn:
-        enabled: false
+        enabled: true
         type: openvpn
         openvpn:
           image:
