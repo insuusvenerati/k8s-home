@@ -1,11 +1,10 @@
 apiVersion: v1
+data:
+    vpnConfigfile: ENC[AES256_GCM,data:ap2Bx/zBu1A9EwON2d/SzoDnwRywnAjHlj5ESNztJkIU1ohXLyp5oArsTh018LowQ31uecnrulNPeu9KTwF8/QdsWjz1Zvo/NSieZoM6ZXEyhDNZMn4OXY3ZOUlhqvKl80IeLqp9cXZFuSBmtN28nAbAjKguOJ5VWdd4hgebKSV0GhZz2Q8m1bSTaiOPFh3JYPnlK8X5TGYoCFHLgQRvnvnuuM02LO03dtLUomo1bhBUpxDOlT/yoznkEVh7hhW6YvKEBqySW2FLNsF8R54kguuve2U2G4rT8MKm006irvCknghp+LRDzYjGO4aOx+x6DwYWqaMsQr+uiQSLxTLhhYxQEBTlG+NiJWt7Qn1oprNOFBe/BY/NhnUUkNaoiqtqrRRO9qWDeT+3jYZ3Y7FvPwKni8/+pDMUDAZHnaNCZEuwXNyqqqmXljSpMSLUGXPKCVsU7JrYLpGJ+LYx2fCHazzN6HU=,iv:ki7RAxG7tmd4zYVh4u9xXQuMSWb367FTKdfqSBc7TUs=,tag:gp1gfDB5XgU++YgwVzWcoA==,type:str]
 kind: Secret
 metadata:
     creationTimestamp: null
     name: wireguard-config
-    namespace: default
-data:
-    vpnConfigfile: ENC[AES256_GCM,data:W9ov4CqcVLi++F58d8Vrws5iYXqs9PykoNLqwE9bUwItrLbFIlKygOgNjThomUJAXLYprg0+uJP4CJx4jVA0ioYVcjhPcoUgKbvEpTSmenUESIPgUHD4m/Snb6DzkUZJvEwdHPx2LE+BMujPXdOFucBRPs9eYLevdZPf6BxNtOolSR0pfZedarv60F5FiflMWiMB3DrV12aLXzOrZcrmTGEE9ESZYVymkwIwY+/IHWW5qYgIK3ZXjMIq0/n9AZxktTBTwH/kl37s3a/7Eqz0cDJ/vd/OAgP7WLhvHKglTSJyUKe2sd4MH6AudernxL8srmtF8xqaKC0f9cwbdza05piICNN+jGOq4kFrnIxfTJY7vBZmRM0B4MmCdOQOncL0+lKIJCaPoz9u49jj0vjiPRhhWYK/XuZzD9NJL5aUlkJZvqPamF8w1KzUOHoMsVbysL0uYfZpOuDnyJ2UukPQuV0WR2eKXrmc3QNsJtW8/ziRqJLvtZRRH0DzUvb+EKkePAqODGNjIgws6LbGFXQmJej/ZA5EO1/s4ceZ7rB/F4+bIzC87Gj1jZqKXDEXSnBljfLP37soEWIzlLE+vcoayk4b0sRrShM8OKjg/LxsV/zvgJGV/+NMx2GUQuwf+x/BG6mboCaWJLkMwxyCDxhvE870pfO4qxJsuiVvmQMMCTIfIwMoBKpGUw1tpf0kwueW+/4RufBY2LXGc1oYKCtFBrlm4VriQcGZQeEzMKa6GvbO815OIvNnORfx0WW64TMB0XLJByrPKuEgRCNg4e4PDCHOq83LM26geaIXLhK4pA5bIgZmUl8tW5YJvOSortzWD4W3qtavqRyJAIU32WrhG0/oCZy2hTIsTCq2gzWAgzUA1kdCSYu0XJw0gQvgGQj3ZGqU7tVVv6HULXREkxrdijNoWRfQrYUL9gl+4yHUbjKdvUECAu5ndzdUkhVAlczHSPokPHL9sZzyDJD6eQUdj1vE08SeGvvW9NZqIku0u6jossEmj+pX9WOB0NRYHq0r+Iv9KtsBSOjLxaGqBjUXqINkfVw13RqBc12MN4qGF6ClzbRXP4CkUD64ABaL2aLdRXtV6ECY1R/0YkXccwN+h8zemOkvDQyoBcZaSSiItxHcMwgUazupRlJSe39nMloWYsIYiPjHPE3y8x8vmuiCBJiA6Uuhgn408hE+GSfPq5Lw+ybqdy3JQdGIfId4IF6w,iv:xCv5971RnAOF2KYyZRjy/xSgBNQbs3zPw/dx/gpN1j0=,tag:6KIOpjc94bXCRqupb0UYkg==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -15,14 +14,14 @@ sops:
         - recipient: age19gpymng4jmuvlf2h3fupa95lptysdpagxz5f7qs8sr8zh2m9zpcqjgucdp
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBYWFZoR21nUjVQZmZITG5U
-            UTdTTzg4dDlDaHV3T01qL08xRWd1VmhvNlE0Ci95QkhLMVozTUJwdUVyRklFbTIr
-            d0M1MFpTV0tSY0pvcGtlYlZXU3g4NWsKLS0tIHp1RW1rTEovN0RVWTExSHRyVFZj
-            R29NQnRSVnlSQXFqYk9ud3NQdGw4b3cK+r8nPBrz31tZgt06JqoEJskNWOtGE/8i
-            jyRu82PvEI7CT09ZN4OoX/8mGcn/J1tAjxuDHjlTUnTriw5nNw9ZhA==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBQb0prZWZGRUJLVlQ1MnFo
+            UHE0WlZpcnZTSXBRYVZMaGdneFp6REszeG1VCkxoWms1eFpDcWRqdVdLSnVpSFNU
+            VnlNcFRHU01pSjMrK2FpbWJUQ0VyUVEKLS0tIDZSQitXUnBIekdCWnF2dkJaMEht
+            R3FLUnFQNmFheGUrUHdmZG1ESHVyU00KANhTHKC9s/vOFeJWFGcuFHt3l3nPP6DV
+            9N0CZ95KdY2Eo7DgbUJa/T7MIuQnvqbI8zGsw/WbKY6Uk7Ixk8zWMQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2022-11-17T18:04:10Z"
-    mac: ENC[AES256_GCM,data:ZHqhJ/GOz4ggDFe1cymAwla7m0GGD9stvrdRT5NDZgShTQCRmEkLs0L3tf1/1JwzW59JqXNrMg4n4p0N+FmA675nm95dYchqnZTXpKgKNoYltjeIIjFaglG89A0ET3C81spA/BEpuMnW3mBHNejhtFr5x7zAw7FiKNKq3u6OyzQ=,iv:+0+Jv3mKVerLaiK4+mU8t9J2hNsSA8DvygJCTSunhBo=,tag:UQXgbcsGBHl/OUFyD0zfZQ==,type:str]
+    lastmodified: "2022-11-17T19:18:43Z"
+    mac: ENC[AES256_GCM,data:cp57hKYtWTjOwOjWlOyTxi2k3HhzarT/i5bCuVTcdPrJ8TVrn8FT8XXULm3vnWAzXF6QZOUmAH723uBYxwlsAOaT1dEJXe9FB2tBo0i8YKLA26Y6MzgJq1bUSm0eMVraan3gJj/bYStkk+ZHGN4iETUV4qm9WZnmW52cIOzy0Wk=,iv:ecL1St6D5ZpkwPAHNWNTzPonS+YEKi6Dfc97aukioJc=,tag:Y2WbRT70/oeUYGWr6/AYlQ==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.7.3
