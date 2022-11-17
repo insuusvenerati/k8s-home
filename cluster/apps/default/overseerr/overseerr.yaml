@@ -30,6 +30,10 @@ spec:
       strategy: RollingUpdate
     env:
       TZ: America/Chicago
+    persistence:
+      config:
+        enabled: true
+        mountPath: /app/config
     ingress:
       main:
         enabled: true
