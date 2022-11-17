@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: media-pv
+  namespace: default
+spec:
+  capacity:
+    storage: 300Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs-client
+  mountOptions:
+    - hard
+    - nfsvers=4.1
+  nfs:
+    path: /srv/nfs
+    server: 192.168.1.185
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: media-pvc
+  namespace: default
+spec:
+  resources:
+    requests:
+      storage: 300Gi
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-client

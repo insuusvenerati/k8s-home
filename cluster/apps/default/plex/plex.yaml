@@ -1,0 +1,47 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: plex-media-server
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: plex
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+      version: 6.4.3
+  interval: 10m0s
+  values:
+    env:
+      TZ: America/Chicago
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: nginx
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-production
+          external-dns.alpha.kubernetes.io/target: ipv4.${SECRET_DOMAIN}
+          external-dns/is-public: "true"
+        hosts:
+          - host: &host plex.${SECRET_DOMAIN}
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - *host
+            secretName: plex-tls
+    persistence:
+      media:
+        enabled: true
+        mountPath: /media
+        storageClass: nfs-client
+        accessModes: ReadWriteMany
+        existingClaim: media-pvc
+        subPath: plex
+      config:
+        enabled: true
+        mountPath: /config
