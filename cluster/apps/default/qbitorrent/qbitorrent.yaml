@@ -61,16 +61,31 @@ spec:
     addons:
       vpn:
         enabled: true
-        type: wireguard
-        wireguard:
+        env:
+          FIREWALL: "on"
+        type: openvpn
+        openvpn:
           image:
-            repository: ghcr.io/k8s-at-home/wireguard
-            tag: v1.0.20210914
-        configFileSecret: wireguard-config
+            repository: dperson/openvpn-client
+            tag: latest
+          authSecret: openvpn-auth-secret
+        configFileSecret: openvpn-config
         scripts:
           up: |-
             #!/bin/bash
+            /etc/openvpn/up.sh
             echo "connected" > /shared/vpnstatus
+
           down: |-
             #!/bin/bash
+            /etc/openvpn/down.sh
             echo "disconnected" > /shared/vpnstatus
+          livenessProbe:
+            exec:
+              command:
+                - sh
+                - -c
+                - if [ $(curl -s https://ipinfo.io/region) == 'Florida' ]; then exit $?; else exit 0; fi
+            initialDelaySeconds: 30
+            periodSeconds: 60
+            failureThreshold: 1
