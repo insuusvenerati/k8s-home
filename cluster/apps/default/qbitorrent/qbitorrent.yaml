@@ -73,7 +73,7 @@ spec:
       vpn:
         enabled: true
         env:
-          FIREWALL: "on"
+          FIREWALL: "off"
         type: openvpn
         openvpn:
           image:
