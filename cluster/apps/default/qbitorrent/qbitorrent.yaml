@@ -26,16 +26,14 @@ spec:
       startup:
         enabled: false
       liveness:
-        enabled: false
+        enabled: true
       readiness:
-        enabled: false
+        enabled: true
     ingress:
       main:
         enabled: true
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt-production
-          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
-          external-dns/is-public: "true"
           hajimari.io/enable: "true"
         hosts:
           - host: &host qbittorrent.${SECRET_DOMAIN}
@@ -70,9 +68,7 @@ spec:
         mountPath: /shared
     addons:
       vpn:
-        enabled: true
-        env:
-          FIREWALL: "off"
+        enabled: false
         type: openvpn
         openvpn:
           image:
