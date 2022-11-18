@@ -16,15 +16,6 @@ spec:
       version: 6.4.3
   interval: 10m0s
   values:
-    service:
-      main:
-        enabled: true
-        type: LoadBalancer
-        ports:
-          http:
-            port: 32400
-            targetPort: 32400
-            nodePort: 32400
     image:
       repository: ghcr.io/k8s-at-home/plex
       tag: v1.29.2.6364-6d72b0cf6
