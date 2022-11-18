@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   ports:
-    - port: 80
+    - port: 25565
 ---
 kind: Endpoints
 apiVersion: v1
@@ -37,4 +37,4 @@ spec:
               service:
                 name: project-ozone
                 port:
-                  number: 80
+                  number: 25565
