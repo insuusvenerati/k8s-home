@@ -25,9 +25,6 @@ kind: Ingress
 metadata:
   name: project-ozone
   namespace: default
-  annotations:
-    external-dns.alpha.kubernetes.io/target: ipv4.${SECRET_DOMAIN}
-    external-dns/is-public: "true"
 spec:
   rules:
     - host: po3.stiforr.com
