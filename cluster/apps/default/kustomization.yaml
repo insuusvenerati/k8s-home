@@ -11,5 +11,4 @@ resources:
   - qbitorrent
   - overseerr
   - radarr
-  # - gameserver
-  # - project-ozone
+  - project-ozone
