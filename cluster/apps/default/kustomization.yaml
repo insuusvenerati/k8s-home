@@ -14,3 +14,4 @@ resources:
   - project-ozone
   - atm7
   # - mastodon
+  - tdarr
