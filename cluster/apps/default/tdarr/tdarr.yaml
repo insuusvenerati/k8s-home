@@ -1,0 +1,54 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: tdarr
+  namespace: default
+spec:
+  chart:
+    spec:
+      chart: tdarr
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+  interval: 15m0s
+  values:
+    env:
+      TZ: America/Chicago
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: nginx
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-production
+          external-dns.alpha.kubernetes.io/target: ipv4.${SECRET_DOMAIN}
+          external-dns/is-public: "true"
+        hosts:
+          - host: &host tdarr.${SECRET_DOMAIN}
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - *host
+            secretName: tdarr-tls
+    persistence:
+      config:
+        enabled: true
+        mountPath: /app/configs
+      # -- Volume used for tdarr server database
+      # @default -- See values.yaml
+      data:
+        enabled: true
+        mountPath: /app/server
+
+      # -- Volume used for media libraries
+      # @default -- See values.yaml
+      media:
+        enabled: true
+        mountPath: /media
+        storageClass: nfs-client
+        accessModes: ReadWriteMany
+        existingClaim: media-pvc
+        subPath: plex
