@@ -11,7 +11,7 @@ resources:
   - qbitorrent
   # - overseerr
   - radarr
-  - project-ozone
+  # - project-ozone
   # - atm7
   # - mastodon
   - tdarr
