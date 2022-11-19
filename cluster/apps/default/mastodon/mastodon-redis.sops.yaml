@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Secret
 metadata:
     name: mastodon-redis-secret
+    namespace: default
 type: Opaque
 data:
     redis-password: ENC[AES256_GCM,data:igliqBO4aPQs3Y/0AI8JHTKWuuWNOtqnxTpoN9IJG1IpQkBa4D0GFT6VncY=,iv:WwQzR6yCUsZbL8Q8V78WzfPAz3IQfsDb9uPUTCKaCXM=,tag:rZqqYR9TpQPzH3ow/rbwdg==,type:str]
