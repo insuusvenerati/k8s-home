@@ -62,3 +62,13 @@ spec:
     redis:
       auth:
         existingSecret: mastodon-redis-secret
+      architecture: standalone
+    elasticsearch:
+      enabled: false
+    resources:
+      requests:
+        cpu: 1000m
+        memory: 2Gi
+      limits:
+        cpu: 2000m
+        memory: 4Gi
