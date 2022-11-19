@@ -36,6 +36,8 @@ spec:
         system:
           accessMode: ReadWriteMany
           storageClassName: nfs-client
+      secrets:
+        existingSecret: mastodon-secret
     ingress:
       enabled: true
       ingressClassName: nginx

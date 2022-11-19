@@ -5,3 +5,4 @@ resources:
   - mastodon.yaml
   - mastodon-redis.sops.yaml
   - mastodon-postgres.sops.yaml
+  - mastodon-secret.sops.yaml
