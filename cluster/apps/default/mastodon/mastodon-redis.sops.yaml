@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: mastodon-redis-secret
+type: Opaque
+data:
+    redis-password: ENC[AES256_GCM,data:igliqBO4aPQs3Y/0AI8JHTKWuuWNOtqnxTpoN9IJG1IpQkBa4D0GFT6VncY=,iv:WwQzR6yCUsZbL8Q8V78WzfPAz3IQfsDb9uPUTCKaCXM=,tag:rZqqYR9TpQPzH3ow/rbwdg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age19gpymng4jmuvlf2h3fupa95lptysdpagxz5f7qs8sr8zh2m9zpcqjgucdp
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBtdlNQNVRNVUdEbSsxOTdv
+            Um9CL2ZrTFJMd0hybU1YVFVzMFBTeWtVdTFjCk44eUt2bVdSejk3MmNKazQzb0RY
+            WVkwUVU5d3B4MHJqZ0o3T1BKZVhxUFUKLS0tIHdQZVdNbTVTZDhTZDQyT1NDdGkw
+            bVVYT0l5TEdlM0YvNUNqY2w5cE14WFUKZwvNTdurheUkiJo2IwCpfeg+AD0q5+2P
+            3mLR0uD1+DVuC4lDZ/ATUmTJuis4igIwy4BQ5ti0hbNOwvq0DsSdaA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2022-11-19T14:42:46Z"
+    mac: ENC[AES256_GCM,data:t5PLBE6vbJnNeIEFLTcg9PkPM0eoETz1kLJO5LLydrFVbqbk7Zre/fHnbal8GjoHR6fangHwM21OB1/9VRC7F9Ls1Spj0iT7QRgQ6nuUK6cSoT2pNBhYu54yq8JABGGhg4ioeSgflkxx2chpclp69G/qpzvEiRFlO2UgAfLF87Y=,iv:6LbSpglthj16MRpblpO3UB7Vi6y/8Z2nRNJd9SpgO7w=,tag:AR9Baziq+jUS/xOt7MAyuw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3

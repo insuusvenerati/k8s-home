@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: mastodon-postgres-secret
+type: Opaque
+data:
+    password: ENC[AES256_GCM,data:MtIpdd/5eP5u/M46VFKnlo5znVbJ+eEdL5eiJs5qTJ2bS6EZmLJ4uErO+qQ=,iv:vJZx0X7d02Cxt7dKToS5C3GHujkdHuCJzSkQsCn3XOE=,tag:/QrF1qqLpFAqlR7YtW0J2A==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age19gpymng4jmuvlf2h3fupa95lptysdpagxz5f7qs8sr8zh2m9zpcqjgucdp
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAxbWdCRGEzZTVqVW43aGpT
+            Zm5vVytxQSt2Uk1KanY4YklMS0hPZHFlUm00CmxxY0hvTk95NkNRQk1FTkxKWUFG
+            Y2VvLzhSdXY5QTNyT0pJaG82cldJeHMKLS0tIFRjZTNTdFNzR0F3QXZ5WFB4RUR3
+            L04weHY4NGNFM3BPcml1alh1eDU1VXMKhEiCwpPvewVf9ATdoDjbv+zk5XRTLeLP
+            QIzGqIgIVeku/X6GGVCwHT2of5aEGJeZfNUC8w1QLkP/7HZTve7cjg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2022-11-19T14:42:43Z"
+    mac: ENC[AES256_GCM,data:xcNOwfI48F7QJOzz/wl/EBudS2QtEG4c27YDO5EImeZvF8jCdXry2CGxIwaXR5DeR3J+F/i7gFqzbB6sYBgNthMvTx6klP3/h0onHlKYAJ1JLAI9o0V7E6TFl6joauHaGtG1hFk5QB/RI12dP9XUn43qwusFt/PqdWvUzf9PzyM=,iv:DdtoMylrqiUbMQWvY87NXGkYeyq4u19Pr8/3SKJBR90=,tag:Oy0Opm1Kn2Lg/FwyEWbT5w==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3

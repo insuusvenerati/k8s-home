@@ -1,0 +1,62 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mastodon
+  namespace: default
+spec:
+  chart:
+    spec:
+      chart: ./chart
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: GitRepository
+        name: mastodon
+        namespace: flux-system
+  interval: 15m0s
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  values:
+    repository: tootsuite/mastodon
+    tag: v4.0.2
+    mastodon:
+      createAdmin:
+        enabled: true
+        username: stiforr
+        email: norwood.sean@gmail.com
+      local_domain: mastodon.${SECRET_DOMAIN}
+      persistence:
+        assets:
+          accessMode: ReadWriteMany
+          storageClassName: nfs-client
+        system:
+          accessMode: ReadWriteMany
+          storageClassName: nfs-client
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-production
+        external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+        external-dns/is-public: "true"
+        nginx.ingress.kubernetes.io/proxy-body-size: 40m
+        nginx.org/client-max-body-size: 40m
+      hosts:
+        - host: &host mastodon.${SECRET_DOMAIN}
+          paths:
+            - path: /
+      tls:
+        - hosts:
+            - *host
+          secretName: mastodon-tls
+    postgresql:
+      enabled: true
+      auth:
+        existingSecret: mastodon-postgres-secret
+    redis:
+      auth:
+        existingSecret: mastodon-redis-secret
