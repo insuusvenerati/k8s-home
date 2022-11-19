@@ -7,9 +7,9 @@ resources:
   - hajimari
   - reloader
   # - cloudflared
-  - plex
+  # - plex
   - qbitorrent
-  - overseerr
+  # - overseerr
   - radarr
   - project-ozone
   # - atm7
