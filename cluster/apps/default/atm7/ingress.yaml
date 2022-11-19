@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: all-the-mods-7
+  namespace: default
+spec:
+  ports:
+    - port: 25565
+      targetPort: 25565
+      protocol: TCP
+  type: LoadBalancer
+  externalTrafficPolicy: Local
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: all-the-mods-7
+  namespace: default
+subsets:
+  - addresses:
+      - ip: 192.168.1.147
+    ports:
+      - port: 25565
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: all-the-mods-7
+  namespace: default
+spec:
+  rules:
+    - host: atm7.stiforr.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: all-the-mods-7
+                port:
+                  number: 25565
