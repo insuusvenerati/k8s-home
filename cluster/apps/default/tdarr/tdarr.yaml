@@ -44,6 +44,7 @@ spec:
         enabled: true
         mountPath: /app/server
         accessMode: ReadWriteOnce
+        size: 10Gi
 
       # -- Volume used for media libraries
       # @default -- See values.yaml
