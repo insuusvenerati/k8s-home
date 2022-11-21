@@ -19,17 +19,17 @@ spec:
     resources:
       limits:
         cpu: 2000m
-        memory: 4Gi
+        memory: 2Gi
       requests:
         cpu: 1000m
-        memory: 2Gi
+        memory: 1Gi
     image:
       repository: ghcr.io/k8s-at-home/plex
       tag: v1.29.2.6364-6d72b0cf6
     env:
       TZ: America/Chicago
       PLEX_PREFERENCE_1: "FriendlyName=plex-kubernetes"
-      PLEX_CLAIM: "claim-KErGJtQp_vJ-Max_716a"
+      PLEX_CLAIM: "claim-6drbi4mkBUgo7N2HKXPx"
     ingress:
       main:
         enabled: true
