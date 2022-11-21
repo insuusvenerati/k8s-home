@@ -28,6 +28,7 @@ spec:
       resources: {}
     env:
       TZ: America/Chicago
+      ffmpegPath: "/usr/local/bin/ffmpeg"
     ingress:
       main:
         enabled: true
