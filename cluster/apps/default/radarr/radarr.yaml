@@ -50,7 +50,7 @@ spec:
         mountPath: /downloads
         existingClaim: media-pvc
         storageClass: nfs-client
-        subPath: /downloads
+        subPath: downloads
       config:
         enabled: true
       media:
