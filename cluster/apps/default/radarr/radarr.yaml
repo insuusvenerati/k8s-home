@@ -46,7 +46,7 @@ spec:
             secretName: radarr-tls
     persistence:
       downloads:
-        enabled: true
+        enabled: false
         mountPath: /downloads
         existingClaim: media-pvc
         storageClass: nfs-client
