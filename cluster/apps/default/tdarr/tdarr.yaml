@@ -35,6 +35,9 @@ spec:
               - *host
             secretName: tdarr-tls
     persistence:
+      shared:
+        enabled: true
+        mountPath: /shared
       config:
         enabled: true
         mountPath: /app/configs
