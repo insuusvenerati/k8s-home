@@ -12,7 +12,17 @@ spec:
   storageClassName: nfs-client
   mountOptions:
     - hard
-    - nfsvers=4.1
+    - timeo=600
+    - retrans=3
+    - proto=tcp
+    - nfsvers=4.2
+    - port=2050
+    - rsize=4096
+    - wsize=4096
+    - noacl
+    - nocto
+    - noatime
+    - nodiratime
   nfs:
     path: /srv/nfs
     server: 192.168.1.185
