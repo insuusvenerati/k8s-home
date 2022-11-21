@@ -17,10 +17,10 @@ spec:
   interval: 15m0s
   install:
     remediation:
-      retries: 3
+      retries: 30
   upgrade:
     remediation:
-      retries: 3
+      retries: 30
   values:
     env:
       TZ: America/Chicago
@@ -45,6 +45,10 @@ spec:
               - *host
             secretName: radarr-tls
     persistence:
+      downloads:
+        enabled: true
+        mountPath: /downloads
+        existingClaim: media-pvc
       config:
         enabled: true
       media:
