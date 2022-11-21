@@ -49,7 +49,11 @@ spec:
     persistence:
       shared:
         enabled: true
-        mountPath: /shared
+        mountPath: /media
+        storageClass: nfs-client
+        accessMode: ReadWriteMany
+        existingClaim: media-pvc
+        subPath: shared
       config:
         enabled: true
         mountPath: /app/configs
