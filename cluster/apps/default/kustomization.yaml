@@ -9,7 +9,7 @@ resources:
   # - cloudflared
   - plex
   - qbitorrent
-  # - overseerr
+  - overseerr
   - radarr
   # - project-ozone
   # - atm7

@@ -55,3 +55,4 @@ k3s_server:
     - "feature-gates=MixedProtocolLBService=true"
     # Required for HAProxy health-checks
     - "anonymous-auth=true"
+  # datastore-endpoint: "http://143.198.180.6:2379"
