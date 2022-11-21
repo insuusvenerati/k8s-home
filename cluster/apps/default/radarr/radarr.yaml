@@ -54,7 +54,7 @@ spec:
         accessModes: ReadWriteMany
         existingClaim: media-pvc
       downloads:
-        enabled: true
+        enabled: false
         mountPath: /downloads
         accessModes: ReadWriteMany
         existingClaim: media-pvc
