@@ -47,3 +47,9 @@ spec:
     persistence:
       config:
         enabled: true
+      media:
+        enabled: true
+        mountPath: /media
+        storageClass: nfs-client
+        accessModes: ReadWriteMany
+        existingClaim: media-pvc
