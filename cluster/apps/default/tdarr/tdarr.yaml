@@ -14,6 +14,12 @@ spec:
         name: k8s-at-home
         namespace: flux-system
   interval: 15m0s
+  install:
+    remediation:
+      retries: 50
+  upgrade:
+    remediation:
+      retries: 50
   values:
     image:
       repository: haveagitgat/tdarr
