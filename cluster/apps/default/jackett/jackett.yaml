@@ -2,54 +2,38 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: radarr
-  namespace: default
+  name: jackett
+  namespace: flux-system
 spec:
   chart:
     spec:
-      chart: radarr
+      chart: jackett
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home
         namespace: flux-system
-      version: 16.3.2
-  interval: 15m0s
-  install:
-    remediation:
-      retries: 3
-  upgrade:
-    remediation:
-      retries: 3
+      version: 11.7.2
+  interval: 15m
   values:
     env:
       TZ: America/Chicago
-    image:
-      repository: ghcr.io/k8s-at-home/radarr
-      pullPolicy: IfNotPresent
-      tag: v4.2.4.6635
     ingress:
       main:
         enabled: true
         ingressClassName: nginx
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt-production
-          hajimari.io/enable: "true"
         hosts:
-          - host: &host radarr.${SECRET_DOMAIN}
+          - host: &host jackett.${SECRET_DOMAIN}
             paths:
               - path: /
                 pathType: Prefix
         tls:
           - hosts:
               - *host
-            secretName: radarr-tls
+            secretName: jackett-tls
     persistence:
       config:
         enabled: true
-      media:
-        enabled: true
-        mountPath: /media
-        storageClass: nfs-client
-        accessModes: ReadWriteMany
-        existingClaim: media-pvc
+        mountPath: /config
