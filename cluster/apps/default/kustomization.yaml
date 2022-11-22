@@ -16,3 +16,4 @@ resources:
   # - mastodon
   - tdarr
   - jackett
+  - home-assistant
