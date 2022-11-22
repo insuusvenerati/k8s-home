@@ -16,6 +16,34 @@ spec:
       version: 6.4.3
   interval: 10m0s
   values:
+    service:
+      main:
+        enabled: true
+        type: LoadBalancer
+        primary: true
+        ports:
+          http:
+            port: 32400
+      dnla-tcp:
+        enabled: true
+        type: LoadBalancer
+        ports:
+          dnla-tcp:
+            enabled: true
+            port: 32469
+            protocol: TCP
+            targetPort: 32469
+        externalTrafficPolicy: Local
+      dnla-udp:
+        enabled: true
+        type: LoadBalancer
+        ports:
+          dnla-udp:
+            enabled: true
+            port: 1900
+            protocol: TCP
+            targetPort: 1900
+        externalTrafficPolicy: Local
     resources:
       limits:
         cpu: 2000m
@@ -38,6 +66,7 @@ spec:
           cert-manager.io/cluster-issuer: letsencrypt-production
           external-dns.alpha.kubernetes.io/target: ipv4.${SECRET_DOMAIN}
           external-dns/is-public: "true"
+          nginx.ingress.kubernetes.io/app-root: /web
         hosts:
           - host: &host plex.${SECRET_DOMAIN}
             paths:
