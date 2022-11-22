@@ -12,7 +12,7 @@ resources:
   - overseerr
   - radarr
   # - project-ozone
-  # - atm7
+  - atm7
   # - mastodon
   # - tdarr
   - jackett
