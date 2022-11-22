@@ -46,6 +46,7 @@ spec:
     persistence:
       config:
         enabled: true
+        storageClass: "nfs-client"
     postgresql:
       enabled: true
       image:
