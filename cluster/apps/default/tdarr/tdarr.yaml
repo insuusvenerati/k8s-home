@@ -24,6 +24,13 @@ spec:
     image:
       repository: haveagitgat/tdarr
       tag: 2.00.18.2
+    resources:
+      limits:
+        cpu: 2000m
+        memory: 2Gi
+      requests:
+        cpu: 1000m
+        memory: 1Gi
     service:
       server:
         enabled: true
