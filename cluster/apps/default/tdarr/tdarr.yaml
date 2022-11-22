@@ -24,6 +24,16 @@ spec:
     image:
       repository: haveagitgat/tdarr
       tag: 2.00.18.2
+    service:
+      main:
+        ports:
+          http:
+            port: 8265
+          server:
+            enabled: true
+            protocol: TCP
+            port: 8266
+            type: LoadBalancer
     node:
       enabled: true
       id: node
