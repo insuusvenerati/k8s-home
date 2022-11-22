@@ -59,7 +59,7 @@ spec:
           adminPasswordKey: postgres-password
           userPasswordKey: password
           replicationPasswordKey: replication-password
-      persistence:
-        primary:
+      primary:
+        persistence:
           enabled: true
           storageClass: "nfs-client"
