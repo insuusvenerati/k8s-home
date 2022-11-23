@@ -24,6 +24,7 @@ spec:
         ports:
           http:
             port: 32400
+        externalTrafficPolicy: Local
       dnla-tcp:
         enabled: true
         type: LoadBalancer

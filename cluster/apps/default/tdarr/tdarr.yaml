@@ -83,16 +83,11 @@ spec:
       config:
         enabled: true
         mountPath: /app/configs
-      # -- Volume used for tdarr server database
-      # @default -- See values.yaml
       data:
         enabled: true
         mountPath: /app/server
         accessMode: ReadWriteOnce
         size: 10Gi
-
-      # -- Volume used for media libraries
-      # @default -- See values.yaml
       media:
         enabled: true
         mountPath: /media
