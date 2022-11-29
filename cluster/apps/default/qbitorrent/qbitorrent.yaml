@@ -56,9 +56,13 @@ spec:
             cpu: 100m
             memory: 128Mi
           limits:
-            cpu: 100m
-            memory: 128Mi
+            cpu: 200m
+            memory: 256Mi
     persistence:
+      config:
+        enabled: true
+        storageClass: nfs-client
+        mountPath: /config
       downloads:
         enabled: true
         mountPath: /downloads
