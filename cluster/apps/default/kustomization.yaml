@@ -14,6 +14,6 @@ resources:
   # - project-ozone
   - atm7
   # - mastodon
-  # - tdarr
+  - tdarr
   - jackett
   - home-assistant
