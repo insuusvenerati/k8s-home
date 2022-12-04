@@ -1,0 +1,11 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: prod-manager
+  namespace: flux-system
+spec:
+  interval: 1h0m0s
+  ref:
+    branch: master
+  url: https://gitlab.com/prod-manager/prod-manager
