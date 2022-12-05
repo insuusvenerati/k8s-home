@@ -24,6 +24,8 @@ spec:
     image:
       repository: haveagitgat/tdarr
       tag: 2.00.18.2
+    nodeSelector:
+      cpus: 24
     resources:
       limits:
         cpu: 1000m
