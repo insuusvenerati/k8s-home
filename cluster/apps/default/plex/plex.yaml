@@ -16,6 +16,8 @@ spec:
       version: 6.4.3
   interval: 10m0s
   values:
+    nodeSelector:
+      cpus: "24"
     service:
       main:
         enabled: true
