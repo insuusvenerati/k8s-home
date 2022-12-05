@@ -26,11 +26,11 @@ spec:
       tag: 2.00.18.2
     resources:
       limits:
-        cpu: 2000m
-        memory: 2Gi
-      requests:
         cpu: 1000m
         memory: 1Gi
+      requests:
+        cpu: 500m
+        memory: 512Mi
     service:
       server:
         enabled: true
@@ -53,7 +53,13 @@ spec:
         repository: haveagitgat/tdarr_node
         tag: 2.00.18.2
         pullPolicy: IfNotPresent
-      resources: {}
+      resources:
+        limits:
+          cpu: 7000m
+          memory: 1Gi
+        requests:
+          cpu: 4000m
+          memory: 1500Mi
     env:
       TZ: America/Chicago
       ffmpegPath: "/usr/local/bin/ffmpeg"
