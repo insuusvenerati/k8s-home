@@ -17,4 +17,3 @@ resources:
   - tdarr
   - jackett
   - home-assistant
-  # - gpu-operator
