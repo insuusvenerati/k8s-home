@@ -12,4 +12,5 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: nvidia
+        namespace: flux-system
   interval: 15m0s
