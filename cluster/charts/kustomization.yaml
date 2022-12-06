@@ -18,3 +18,4 @@ resources:
   - k8s-at-home.yaml
   - mastodon.yaml
   - prod-manager.yaml
+  - nvidia.yaml
