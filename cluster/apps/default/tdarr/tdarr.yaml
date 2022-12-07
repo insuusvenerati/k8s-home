@@ -68,6 +68,7 @@ spec:
       ffmpegPath: "tdarr-ffmpeg"
       PUID: "568"
       PGID: "568"
+      THREADS_WORKER_INIT_TIMEOUT: "20000000"
     ingress:
       main:
         enabled: true
