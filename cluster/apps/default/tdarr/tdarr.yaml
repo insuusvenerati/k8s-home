@@ -65,7 +65,7 @@ spec:
           memory: 1500Mi
     env:
       TZ: America/Chicago
-      ffmpegPath: "/usr/local/bin/ffmpeg"
+      ffmpegPath: "tdarr-ffmpeg"
     ingress:
       main:
         enabled: true
