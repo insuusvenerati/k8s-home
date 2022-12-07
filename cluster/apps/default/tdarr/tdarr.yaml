@@ -66,6 +66,8 @@ spec:
     env:
       TZ: America/Chicago
       ffmpegPath: "tdarr-ffmpeg"
+      PUID: "568"
+      PGID: "568"
     ingress:
       main:
         enabled: true
@@ -104,3 +106,8 @@ spec:
         storageClass: nfs-client
         accessMode: ReadWriteMany
         existingClaim: media-pvc
+      preset:
+        enabled: true
+        mountPath: /app/presets
+        type: configMap
+        configMapName: tdarr-presets
