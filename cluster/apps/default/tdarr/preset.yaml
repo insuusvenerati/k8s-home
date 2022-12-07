@@ -3,6 +3,7 @@ kind: ConfigMap
 metadata:
   name: tdarr-presets
   namespace: default
+
 data:
   H.265-VCN-1080p.json: |-
     {
@@ -13,9 +14,7 @@ data:
                     "copy:aac"
                 ],
                 "AudioEncoderFallback": "none",
-                "AudioLanguageList": [
-                    "eng"
-                ],
+                "AudioLanguageList": [],
                 "AudioList": [
                     {
                         "AudioBitrate": 160,
@@ -27,7 +26,7 @@ data:
                         "AudioSamplerate": "auto",
                         "AudioTrackDRCSlider": 0.0,
                         "AudioTrackGainSlider": 0.0,
-                        "AudioTrackQuality": 1.0,
+                        "AudioTrackQuality": -1.0,
                         "AudioTrackQualityEnable": false
                     }
                 ],
@@ -36,7 +35,7 @@ data:
                 "ChapterMarkers": true,
                 "ChildrenArray": [],
                 "Default": false,
-                "FileFormat": "av_mkv",
+                "FileFormat": "av_mp4",
                 "Folder": false,
                 "FolderOpen": false,
                 "InlineParameterSets": false,
@@ -53,16 +52,16 @@ data:
                 "PictureColorspacePreset": "off",
                 "PictureCombDetectCustom": "",
                 "PictureCombDetectPreset": "off",
-                "PictureDARWidth": 1920,
+                "PictureDARWidth": 0,
                 "PictureDeblockCustom": "strength=strong:thresh=20:blocksize=8",
                 "PictureDeblockPreset": "off",
                 "PictureDeblockTune": "medium",
                 "PictureDeinterlaceCustom": "",
                 "PictureDeinterlaceFilter": "off",
-                "PictureDeinterlacePreset": "",
+                "PictureDeinterlacePreset": "default",
                 "PictureDenoiseCustom": "",
                 "PictureDenoiseFilter": "off",
-                "PictureDenoisePreset": "",
+                "PictureDenoisePreset": "medium",
                 "PictureDenoiseTune": "none",
                 "PictureDetelecine": "off",
                 "PictureDetelecineCustom": "",
@@ -75,8 +74,8 @@ data:
                 "PictureLooseCrop": false,
                 "PictureModulus": 2,
                 "PicturePAR": "auto",
-                "PicturePARHeight": 1,
-                "PicturePARWidth": 1,
+                "PicturePARHeight": 720,
+                "PicturePARWidth": 853,
                 "PicturePadBottom": 0,
                 "PicturePadColor": "black",
                 "PicturePadLeft": 0,
@@ -87,35 +86,33 @@ data:
                 "PictureRotate": "angle=0:hflip=0",
                 "PictureSharpenCustom": "",
                 "PictureSharpenFilter": "off",
-                "PictureSharpenPreset": "",
-                "PictureSharpenTune": "",
+                "PictureSharpenPreset": "medium",
+                "PictureSharpenTune": "none",
                 "PictureTopCrop": 0,
                 "PictureUseMaximumSize": true,
                 "PictureWidth": 1920,
                 "PresetDescription": "AMD VCN hardware accelerated H.265 video (up to 1080p) and AAC stereo audio, in an MP4 container.",
-                "PresetDisabled": false,
-                "PresetName": "H.265",
+                "PresetDisabled": true,
+                "PresetName": "H.265 VCN 1080p",
                 "SubtitleAddCC": false,
                 "SubtitleAddForeignAudioSearch": false,
                 "SubtitleAddForeignAudioSubtitle": false,
                 "SubtitleBurnBDSub": false,
                 "SubtitleBurnBehavior": "none",
                 "SubtitleBurnDVDSub": false,
-                "SubtitleLanguageList": [
-                    "eng"
-                ],
-                "SubtitleTrackSelectionBehavior": "first",
-                "Type": 1,
+                "SubtitleLanguageList": [],
+                "SubtitleTrackSelectionBehavior": "none",
+                "Type": 0,
                 "UsesPictureFilters": true,
                 "VideoAvgBitrate": 7250,
                 "VideoColorMatrixCodeOverride": 0,
-                "VideoEncoder": "x264",
+                "VideoEncoder": "vce_h265",
                 "VideoFramerate": "auto",
                 "VideoFramerateMode": "vfr",
                 "VideoGrayScale": false,
                 "VideoLevel": "auto",
                 "VideoOptionExtra": "",
-                "VideoPreset": "superfast",
+                "VideoPreset": "balanced",
                 "VideoProfile": "main",
                 "VideoQSVDecode": false,
                 "VideoQualitySlider": 25.0,

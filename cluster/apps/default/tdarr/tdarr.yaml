@@ -111,3 +111,4 @@ spec:
         type: configMap
         configMapName: tdarr-presets
         name: tdarr-presets
+        readOnly: false
