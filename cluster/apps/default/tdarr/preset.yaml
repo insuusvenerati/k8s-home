@@ -94,7 +94,7 @@ data:
                 "PictureWidth": 1920,
                 "PresetDescription": "AMD VCN hardware accelerated H.265 video (up to 1080p) and AAC stereo audio, in an MP4 container.",
                 "PresetDisabled": false,
-                "PresetName": "H.265 VCN 1080p",
+                "PresetName": "H.265",
                 "SubtitleAddCC": false,
                 "SubtitleAddForeignAudioSearch": false,
                 "SubtitleAddForeignAudioSubtitle": false,
