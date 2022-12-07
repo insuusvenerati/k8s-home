@@ -111,3 +111,4 @@ spec:
         mountPath: /app/presets
         type: configMap
         configMapName: tdarr-presets
+        name: tdarr-presets
