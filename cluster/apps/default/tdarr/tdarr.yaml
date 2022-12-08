@@ -97,11 +97,15 @@ spec:
       config:
         enabled: true
         mountPath: /app/configs
+        size: 1Gi
+        accessMode: ReadWriteOnce
+        storageClass: nfs-client
       data:
         enabled: true
         mountPath: /app/server
         size: 1Gi
         accessMode: ReadWriteOnce
+        storageClass: nfs-client
       media:
         enabled: true
         mountPath: /media
