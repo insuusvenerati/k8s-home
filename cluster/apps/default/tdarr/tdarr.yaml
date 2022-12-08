@@ -101,6 +101,7 @@ spec:
         enabled: true
         mountPath: /app/server
         size: 1Gi
+        accessMode: ReadWriteOnce
       media:
         enabled: true
         mountPath: /media
