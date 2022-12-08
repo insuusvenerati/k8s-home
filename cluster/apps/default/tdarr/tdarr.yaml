@@ -89,11 +89,6 @@ spec:
       shared:
         enabled: true
         mountPath: /shared
-        type: pvc
-        # storageClass: nfs-client
-        accessMode: ReadWriteMany
-        existingClaim: media-pvc
-        subPath: shared
       config:
         enabled: true
         mountPath: /app/configs
