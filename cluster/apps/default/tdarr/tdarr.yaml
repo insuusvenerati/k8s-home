@@ -89,17 +89,18 @@ spec:
       shared:
         enabled: true
         mountPath: /shared
-        storageClass: nfs-client
+        # type: emptyDir
+        # storageClass: nfs-client
         accessMode: ReadWriteMany
         existingClaim: media-pvc
+        subPath: shared
       config:
         enabled: true
         mountPath: /app/configs
       data:
         enabled: true
         mountPath: /app/server
-        accessMode: ReadWriteOnce
-        size: 10Gi
+        size: 1Gi
       media:
         enabled: true
         mountPath: /media
