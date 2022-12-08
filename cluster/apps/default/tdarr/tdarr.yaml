@@ -106,10 +106,10 @@ spec:
         storageClass: nfs-client
         accessMode: ReadWriteMany
         existingClaim: media-pvc
-      preset:
-        enabled: true
-        mountPath: /app/presets
-        type: configMap
-        configMapName: tdarr-presets
-        name: tdarr-presets
-        readOnly: false
+      # preset:
+      #   enabled: true
+      #   mountPath: /app/presets
+      #   type: configMap
+      #   configMapName: tdarr-presets
+      #   name: tdarr-presets
+      #   readOnly: false
