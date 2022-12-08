@@ -89,7 +89,7 @@ spec:
       shared:
         enabled: true
         mountPath: /shared
-        # type: emptyDir
+        type: pvc
         # storageClass: nfs-client
         accessMode: ReadWriteMany
         existingClaim: media-pvc
