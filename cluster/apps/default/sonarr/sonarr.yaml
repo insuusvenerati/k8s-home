@@ -1,0 +1,59 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: sonarr
+  namespace: default
+spec:
+  chart:
+    spec:
+      chart: sonarr
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+        namespace: flux-system
+  interval: 15m0s
+  install:
+    remediation:
+      retries: 30
+  upgrade:
+    remediation:
+      retries: 30
+  values:
+    env:
+      TZ: America/Chicago
+    image:
+      repository: ghcr.io/k8s-at-home/sonarr
+      tag: v3.0.9.1549
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: nginx
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-production
+          hajimari.io/enable: "true"
+        hosts:
+          - host: &host plex.${SECRET_DOMAIN}
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - *host
+            secretName: sonarr-tls
+    persistence:
+      downloads:
+        enabled: false
+        mountPath: /downloads
+        existingClaim: media-pvc
+        storageClass: nfs-client
+        subPath: downloads
+      config:
+        enabled: true
+      media:
+        enabled: true
+        mountPath: /media
+        storageClass: nfs-client
+        accessModes: ReadWriteMany
+        existingClaim: media-pvc

@@ -17,3 +17,4 @@ resources:
   # - tdarr
   - jackett
   - home-assistant
+  - sonarr
