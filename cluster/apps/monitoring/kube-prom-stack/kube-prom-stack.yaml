@@ -96,3 +96,20 @@ spec:
     kubeEtcd:
       endpoints:
         - 192.168.1.242
+        - 192.168.1.241
+        - 192.168.1.240
+    kubeScheduler:
+      endpoints:
+        - 192.168.1.242
+        - 192.168.1.241
+        - 192.168.1.240
+    kubeProxy:
+      endpoints:
+        - 192.168.1.242
+        - 192.168.1.241
+        - 192.168.1.240
+    kubeControllerManager:
+      endpoints:
+        - 192.168.1.242
+        - 192.168.1.241
+        - 192.168.1.240
