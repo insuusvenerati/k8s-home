@@ -58,20 +58,23 @@ spec:
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt-production
           hajimari.io/enable: "true"
+          ingress.kubernetes.io/ssl-redirect: "false"
+          nginx.ingress.kubernetes.io/enable-cors: "true"
+          nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
         hosts:
           - &host grafana.${SECRET_DOMAIN}
         tls:
           - hosts:
               - *host
             secretName: grafana-tls
-        extraPaths:
-          - path: /*
-            pathType: Prefix
-            backend:
-              service:
-                name: kube-prometheus-stack-grafana
-                port:
-                  number: 80
+        # extraPaths:
+        #   - path: /*
+        #     pathType: Prefix
+        #     backend:
+        #       service:
+        #         name: kube-prometheus-stack-grafana
+        #         port:
+        #           number: 80
       resources:
         requests:
           cpu: 200m
