@@ -71,7 +71,6 @@ spec:
       persistence:
         enabled: true
         size: 10Gi
-        storageClassName: nfs-client
       admin:
         existingSecret: grafana-admin
         userKey: admin-user
