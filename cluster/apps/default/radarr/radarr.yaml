@@ -14,7 +14,7 @@ spec:
         name: k8s-at-home
         namespace: flux-system
       version: 16.3.2
-  interval: 15m0s
+  interval: 6h
   install:
     remediation:
       retries: 30

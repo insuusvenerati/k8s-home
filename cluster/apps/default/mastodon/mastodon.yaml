@@ -13,7 +13,7 @@ spec:
         kind: GitRepository
         name: mastodon
         namespace: flux-system
-  interval: 15m0s
+  interval: 6h
   install:
     remediation:
       retries: 3

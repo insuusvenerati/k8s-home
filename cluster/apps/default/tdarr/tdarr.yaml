@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: k8s-at-home
         namespace: flux-system
-  interval: 15m0s
+  interval: 6h
   install:
     remediation:
       retries: 50

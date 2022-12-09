@@ -19,3 +19,4 @@ resources:
   - mastodon.yaml
   - prod-manager.yaml
   - nvidia.yaml
+  - prometheus-community.yaml
