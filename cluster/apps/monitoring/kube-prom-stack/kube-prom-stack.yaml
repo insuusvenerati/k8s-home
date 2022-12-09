@@ -68,7 +68,7 @@ spec:
         extraPaths:
           - path: /*
             backend:
-              serviceName: grafana
+              serviceName: kube-prometheus-stack-grafana
               servicePort: 80
       resources:
         requests:
