@@ -67,14 +67,6 @@ spec:
           - hosts:
               - *host
             secretName: grafana-tls
-        # extraPaths:
-        #   - path: /*
-        #     pathType: Prefix
-        #     backend:
-        #       service:
-        #         name: kube-prometheus-stack-grafana
-        #         port:
-        #           number: 80
       resources:
         requests:
           cpu: 200m
@@ -85,10 +77,6 @@ spec:
       persistence:
         enabled: true
         size: 10Gi
-      # admin:
-      #   existingSecret: grafana-admin
-      #   userKey: admin-user
-      #   passwordKey: admin-password
     prometheusOperator:
       resources:
         requests:
@@ -105,3 +93,6 @@ spec:
         limits:
           cpu: 1000m
           memory: 512Mi
+    kubeEtcd:
+      endpoints:
+        - 192.168.1.242
