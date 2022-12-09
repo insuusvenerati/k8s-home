@@ -65,6 +65,11 @@ spec:
           - hosts:
               - *host
             secretName: grafana-tls
+        extraPaths:
+          - path: /*
+            backend:
+              serviceName: grafana
+              servicePort: 80
       resources:
         requests:
           cpu: 200m
