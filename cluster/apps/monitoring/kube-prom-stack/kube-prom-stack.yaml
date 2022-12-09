@@ -67,6 +67,7 @@ spec:
             secretName: grafana-tls
         extraPaths:
           - path: /*
+            pathType: Prefix
             backend:
               serviceName: kube-prometheus-stack-grafana
               servicePort: 80
