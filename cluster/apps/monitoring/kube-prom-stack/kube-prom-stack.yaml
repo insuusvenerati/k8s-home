@@ -82,10 +82,10 @@ spec:
       persistence:
         enabled: true
         size: 10Gi
-      admin:
-        existingSecret: grafana-admin
-        userKey: admin-user
-        passwordKey: admin-password
+      # admin:
+      #   existingSecret: grafana-admin
+      #   userKey: admin-user
+      #   passwordKey: admin-password
     prometheusOperator:
       resources:
         requests:
