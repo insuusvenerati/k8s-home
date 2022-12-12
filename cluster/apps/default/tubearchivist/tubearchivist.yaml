@@ -50,3 +50,8 @@ spec:
           - hosts:
               - *host
             secretName: tubearchivist-tls
+    service:
+      main:
+        ports:
+          http:
+            port: 8000
