@@ -32,6 +32,10 @@ metadata:
     hajimari.io/enable: "true"
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
+  tls:
+    - hosts:
+        - uptime.${SECRET_DOMAIN}
+      secretName: uptime-tls
   rules:
     - host: uptime.${SECRET_DOMAIN}
       http:
