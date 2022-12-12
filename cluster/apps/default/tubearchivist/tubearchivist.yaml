@@ -34,6 +34,10 @@ spec:
     elasticsearch:
       security:
         existingSecret: tubearchivist-elasticsearch
+      resources:
+        limits:
+          cpu: 2000m
+          memory: 1024Mi
     persistence:
       youtube:
         enabled: true
