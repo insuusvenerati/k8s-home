@@ -19,4 +19,4 @@ resources:
   - home-assistant
   - sonarr
   - vpn
-  - tubearchivist
+  # - tubearchivist
