@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: uptime1
+  namespace: default
+spec:
+  ports:
+    - port: 3001
+      targetPort: 3001
+      protocol: TCP
+  type: LoadBalancer
+  externalTrafficPolicy: Local
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: uptime
+  namespace: default
+subsets:
+  - addresses:
+      - ip: 192.168.1.165
+    ports:
+      - port: 3001
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: uptime
+  namespace: default
+spec:
+  rules:
+    - host: uptime.${SECRET_DOMAIN}
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: uptime
+                port:
+                  number: 3001
