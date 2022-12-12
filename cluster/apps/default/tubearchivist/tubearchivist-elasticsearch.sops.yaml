@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: tubearchivist-elasticsearch
+    namespace: default
+type: Opaque
+data:
+    password: ENC[AES256_GCM,data:CmpusqJJgFirBNgS/mResA==,iv:Xi4ihTgK9v1T87MHxvloXL2CAh1nDzgDGR58EA9mmM8=,tag:lXdL4ozvQqWryzuUy3dp0w==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age19gpymng4jmuvlf2h3fupa95lptysdpagxz5f7qs8sr8zh2m9zpcqjgucdp
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB0TG1VUXFySzJUYjR4cmoy
+            Ukp0ZTVWZ29La1Vjdi9ERUJjTnZaWW1WNlFjCnlYekFNOWNCcFVKR1FGQ2JKREN1
+            ODdZZkFsQmdHczg0T1lJVytmVmFjeVUKLS0tIFdlMXpGcFFIMUtMODNJSXBIbE14
+            d3VHM2JxSDVNU3lhdzF4QmhzQmtmdW8Ke19ODSdxXQ6QpnqCHLJzAtDgS7m0crYU
+            rBtknVPyKnZkRu2LK+eDl14mRKxJVUS9w1MB8QLEvSKeVT7VBLavWQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2022-12-12T17:05:20Z"
+    mac: ENC[AES256_GCM,data:L21ty3Q16LinNriC0a5t4ayoqME/Z0a7IgTozBbhtae2YSXjmtHP8b7aUABDdjpFFRFYGzzD9sZSnCOoxDuG2PZZyP6ZF+fzUijBnjVlJRz8pB7oeWZHgep1R/ZP2/8NS8LZkI8/fF3epoNg6ZMIwgQK3+Oya/cRMFacmUsRbt0=,iv:EKm26cUEQBeRiqR2pntk2srD1tuDB8kGVJkwdh7jBO8=,tag:ULAFoa9IHRp4SPNhwjbNlA==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3

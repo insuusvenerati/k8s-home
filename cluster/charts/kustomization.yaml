@@ -20,3 +20,4 @@ resources:
   - prod-manager.yaml
   - nvidia.yaml
   - prometheus-community.yaml
+  - stiforr.yaml
