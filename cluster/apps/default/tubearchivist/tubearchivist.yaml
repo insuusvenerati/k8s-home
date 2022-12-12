@@ -24,6 +24,13 @@ spec:
     image:
       repository: bbilly1/tubearchivist
       tag: "v0.3.0"
+    env:
+      TA_HOST: "tubearchivist.${SECRET_DOMAIN}"
+      ES_URL: "http://tubearchivist-elasticsearch-master:9200"
+    envFrom:
+      - secretRef:
+          name: tubearchivist-elasticsearch
+          key: ELASTIC_PASSWORD
     elasticsearch:
       security:
         existingSecret: tubearchivist-elasticsearch
