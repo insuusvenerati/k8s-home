@@ -27,10 +27,10 @@ kind: Ingress
 metadata:
   name: uptime
   namespace: default
-annotations:
-  cert-manager.io/cluster-issuer: letsencrypt-production
-  hajimari.io/enable: "true"
-  nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    hajimari.io/enable: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
   rules:
     - host: uptime.${SECRET_DOMAIN}
