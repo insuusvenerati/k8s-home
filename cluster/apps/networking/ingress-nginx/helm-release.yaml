@@ -37,6 +37,9 @@ spec:
         annotations:
           metallb.universe.tf/loadBalancerIPs: |-
             ${METALLB_INGRESS_ADDR}
+          prometheus.io/scrape: "true"
+          prometheus.io/port: "9113"
+          prometheus.io/scheme: http
         externalTrafficPolicy: Local
       publishService:
         enabled: true
