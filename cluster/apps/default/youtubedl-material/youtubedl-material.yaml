@@ -46,12 +46,14 @@ spec:
         existingClaim: media-pvc
         subPath: youtubedl/audio
         accessMode: ReadWriteMany
+        storageClass: nfs-client
       subscriptions:
         enabled: true
         mountPath: /app/subscriptions
         existingClaim: media-pvc
         subPath: youtubedl/subs
         accessMode: ReadWriteMany
+        storageClass: nfs-client
       users:
         enabled: true
         mountPath: /users
@@ -63,3 +65,4 @@ spec:
         existingClaim: media-pvc
         subPath: youtubedl/video
         accessMode: ReadWriteMany
+        storageClass: nfs-client
