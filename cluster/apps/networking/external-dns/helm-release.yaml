@@ -23,6 +23,8 @@ spec:
     remediation:
       retries: 5
   values:
+    serviceMonitor:
+      enabled: true
     interval: 5m
     logLevel: debug
     provider: cloudflare
