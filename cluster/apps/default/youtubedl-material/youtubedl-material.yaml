@@ -1,0 +1,63 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: youtubedl-material
+  namespace: default
+spec:
+  chart:
+    spec:
+      chart: youtubedl-material
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+        namespace: flux-system
+  interval: 6h0m0s
+  values:
+    image:
+      repository: ghcr.io/tzahi12345/youtubedl-material
+      tag: 4.3
+    env:
+      TZ: America/Chicago
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: nginx
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-production
+          hajimari.io/enabled: "true"
+        hosts:
+          - host: &host youtubedl.${SECRET_DOMAIN}
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - *host
+            secretName: youtubedl-tls
+    persistence:
+      config:
+        enabled: true
+        mountPath: /app/appdata
+      audio:
+        enabled: true
+        mountPath: /app/audio
+        existingClaim: media-pvc
+        subPath: youtubedl/audio
+        accessMode: ReadWriteMany
+      subscriptions:
+        enabled: true
+        mountPath: /app/subscriptions
+        existingClaim: media-pvc
+        subPath: youtubedl/subs
+        accessMode: ReadWriteMany
+      users:
+        enabled: true
+        mountPath: /users
+      video:
+        enabled: true
+        mountPath: /app/video
+        existingClaim: media-pvc
+        subPath: youtubedl/video
+        accessMode: ReadWriteMany
