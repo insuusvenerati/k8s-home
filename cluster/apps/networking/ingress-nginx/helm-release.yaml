@@ -62,9 +62,9 @@ spec:
           annotations:
             prometheus.io/scrape: "true"
             prometheus.io/port: "10254"
-            prometheus.io/scheme: http
+            # prometheus.io/scheme: http
         serviceMonitor:
-          enabled: true
+          enabled: false
           additionalLabels: {}
           ## The label to use to retrieve the job name from.
           ## jobLabel: "app.kubernetes.io/name"
