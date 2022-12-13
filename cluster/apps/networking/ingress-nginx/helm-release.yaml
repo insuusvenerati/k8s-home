@@ -68,7 +68,7 @@ spec:
           additionalLabels: {}
           ## The label to use to retrieve the job name from.
           ## jobLabel: "app.kubernetes.io/name"
-          namespace: ""
+          namespace: "monitoring"
           namespaceSelector: {}
           scrapeInterval: 30s
           # honorLabels: true
