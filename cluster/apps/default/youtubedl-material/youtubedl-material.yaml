@@ -55,7 +55,6 @@ spec:
       users:
         enabled: true
         mountPath: /users
-        accessMode: ReadWriteMany
         size: 1Gi
       video:
         enabled: true
