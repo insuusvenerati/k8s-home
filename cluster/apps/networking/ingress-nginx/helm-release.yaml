@@ -5,7 +5,7 @@ metadata:
   name: ingress-nginx
   namespace: networking
 spec:
-  interval: 15m
+  interval: 6h
   chart:
     spec:
       chart: ingress-nginx
@@ -14,7 +14,7 @@ spec:
         kind: HelmRepository
         name: ingress-nginx
         namespace: flux-system
-      interval: 15m
+      interval: 6h
   install:
     createNamespace: true
     remediation:
@@ -37,9 +37,6 @@ spec:
         annotations:
           metallb.universe.tf/loadBalancerIPs: |-
             ${METALLB_INGRESS_ADDR}
-          prometheus.io/scrape: "true"
-          prometheus.io/port: "9113"
-          prometheus.io/scheme: http
         externalTrafficPolicy: Local
       publishService:
         enabled: true
@@ -61,6 +58,11 @@ spec:
         use-forwarded-headers: "true"
       metrics:
         enabled: true
+        service:
+          annotations:
+            prometheus.io/scrape: "true"
+            prometheus.io/port: "10254"
+            prometheus.io/scheme: http
       podAnnotations:
         configmap.reloader.stakater.com/reload: "cloudflare-proxied-networks"
       resources:
