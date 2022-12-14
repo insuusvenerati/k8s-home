@@ -17,19 +17,6 @@ data:
 
   services.yaml: |
     ---
-    - Development:
-        - Gitea:
-            icon: gitea.png
-            href: https://gitea.${SECRET_DOMAIN}
-            description: Private Github Alternative
-            app: gitea
-            namespace: dev
-        - Drone CI:
-            icon: drone.png
-            href: https://drone.${SECRET_DOMAIN}
-            description: CI/CD Platform
-            app: drone
-            namespace: dev
 
   settings.yaml: |
     ---

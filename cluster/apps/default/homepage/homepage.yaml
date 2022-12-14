@@ -37,7 +37,7 @@ spec:
         annotations:
           gethomepage.dev/name: "Homepage"
           gethomepage.dev/description: "A modern, secure, highly customizable application dashboard."
-          gethomepage.dev/group: "A New Group"
+          gethomepage.dev/group: "Misc"
           gethomepage.dev/icon: "homepage.png"
         ingressClassName: "nginx"
         hosts:
