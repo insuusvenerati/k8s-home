@@ -65,8 +65,6 @@ spec:
       main:
         enabled: true
         ingressClassName: nginx
-        labels:
-          gethomepage.dev/enabled: "true"
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt-production
           hajimari.io/enable: "true"
