@@ -17,7 +17,7 @@ spec:
   values:
     image:
       repository: ghcr.io/tzahi12345/youtubedl-material
-      tag: 4.3
+      tag: "4.3"
     env:
       TZ: America/Chicago
     ingress:
