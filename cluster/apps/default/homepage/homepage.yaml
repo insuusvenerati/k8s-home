@@ -41,7 +41,7 @@ spec:
           gethomepage.dev/icon: "homepage.png"
         ingressClassName: "nginx"
         hosts:
-          - host: &host "homepage.local"
+          - host: &host "home.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
