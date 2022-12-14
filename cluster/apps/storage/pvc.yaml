@@ -12,10 +12,17 @@ spec:
   storageClassName: nfs-client
   mountOptions:
     - nolock
+    - nfsvers=4.1
+    - noacl
+    - nocto
+    - noatime
+    - nodiratime
+    - rsize=32768
+    - wsize=32768
   nfs:
     path: /srv/nfs
     server: 192.168.1.185
-
+    readOnly: false
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
