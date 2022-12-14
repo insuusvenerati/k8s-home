@@ -21,3 +21,4 @@ resources:
   - nvidia.yaml
   - prometheus-community.yaml
   - stiforr.yaml
+  - jameswynn.yaml
