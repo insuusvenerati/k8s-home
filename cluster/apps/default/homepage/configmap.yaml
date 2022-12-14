@@ -23,6 +23,10 @@ data:
           icon: plex.png
           app: plex
           namespace: default
+          widget:
+            type: plex
+            url: https://plex.${SECRET_DOMAIN}
+            key: ${PLEX_TOKEN}
 
   settings.yaml: |
     ---
