@@ -35,13 +35,14 @@ spec:
         labels:
           gethomepage.dev/enabled: "true"
         annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-production
           gethomepage.dev/name: "Homepage"
           gethomepage.dev/description: "A modern, secure, highly customizable application dashboard."
           gethomepage.dev/group: "Misc"
           gethomepage.dev/icon: "homepage.png"
         ingressClassName: "nginx"
         hosts:
-          - host: &host "home.${SECRET_DOMAIN}"
+          - host: &host home.${SECRET_DOMAIN}
             paths:
               - path: /
                 pathType: Prefix

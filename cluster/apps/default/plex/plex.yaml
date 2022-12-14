@@ -65,9 +65,14 @@ spec:
       main:
         enabled: true
         ingressClassName: nginx
+        labels:
+          gethomepage.dev/enabled: "true"
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt-production
-          hajimari.io/enable: "true"
+          gethomepage.dev/name: "Plex"
+          gethomepage.dev/description: "Plex is a one stop destination to stream movies, tv shows, sports & music. Check good movies to watch on Plex and stream all your personal media libraries ..."
+          gethomepage.dev/group: "Media"
+          gethomepage.dev/icon: "plex.png"
           external-dns.alpha.kubernetes.io/target: ipv4.${SECRET_DOMAIN}
           external-dns/is-public: "true"
           nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
