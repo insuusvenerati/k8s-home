@@ -47,6 +47,7 @@ spec:
         # subPath: youtubedl/audio
         accessMode: ReadWriteMany
         storageClass: nfs-client
+        size: 10Gi
       subscriptions:
         enabled: true
         mountPath: /app/subscriptions
@@ -54,6 +55,7 @@ spec:
         # subPath: youtubedl/subs
         accessMode: ReadWriteMany
         storageClass: nfs-client
+        size: 10Gi
       users:
         enabled: true
         mountPath: /users
