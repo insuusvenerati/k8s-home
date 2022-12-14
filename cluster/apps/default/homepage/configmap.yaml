@@ -21,7 +21,7 @@ data:
       - Plex:
           href: https://plex.${SECRET_DOMAIN}
           icon: plex.png
-          app: plex-media-server
+          app: plex
           namespace: default
 
   settings.yaml: |
