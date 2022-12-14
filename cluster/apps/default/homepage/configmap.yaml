@@ -17,6 +17,12 @@ data:
 
   services.yaml: |
     ---
+    - Media:
+      - Plex:
+          href: https://plex.${SECRET_DOMAIN}
+          icon: plex.png
+          app: plex-media-server
+          namespace: default
 
   settings.yaml: |
     ---
