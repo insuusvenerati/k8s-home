@@ -58,21 +58,3 @@ spec:
     envFrom:
       - secretRef:
           name: plex-token
-    ## Use envsubst to replace Media.Plex.widget.key with PLEX_TOKEN from secret
-    initContainers:
-      config:
-        name: config
-        command:
-          - sh
-          - -c
-          - envsubst < /app/config/services.yaml > /tmp/services.yaml && mv /tmp/services.yaml /app/config/services.yaml
-        image: bhgedigital/envsubst:v1.0-alpine3.6
-        env:
-          - name: PLEX_TOKEN
-            valueFrom:
-              secretKeyRef:
-                name: plex-token
-                key: PLEX_TOKEN
-        volumeMounts:
-          - mountPath: /app/config
-            name: homepage-config
