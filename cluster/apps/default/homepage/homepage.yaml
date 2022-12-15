@@ -57,8 +57,9 @@ spec:
           name: plex-token
     ## Use envsubst to replace Media.Plex.widget.key with PLEX_TOKEN from secret
     initContainers:
-      - name: config
-        args:
+      config:
+        name: config
+        command:
           - sh
           - -c
           - envsubst < /app/config/services.yaml > /tmp/services.yaml && mv /tmp/services.yaml /app/config/services.yaml
