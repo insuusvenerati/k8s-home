@@ -8,9 +8,9 @@ stringData:
     PLEX_TOKEN: ENC[AES256_GCM,data:Yag4ZDja6IOUlZkUnhZGBaHoEvbtWTP7t+prGQ==,iv:rgmOHtl8EcNISVfWwsDe9QUmbEH+O936dmz9QNo+uxk=,tag:x6z7ngdFor1WfvUdyafzLg==,type:str]
 sops:
     kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
+    gcpKms: []
+    azureKv: []
+    hcVault: []
     age:
         - recipient: age19gpymng4jmuvlf2h3fupa95lptysdpagxz5f7qs8sr8zh2m9zpcqjgucdp
           enc: |
@@ -24,5 +24,5 @@ sops:
     lastmodified: "2022-12-15T14:25:25Z"
     mac: ENC[AES256_GCM,data:n1IAU9W7dvPRb/S+y2aHvMYphKHTuXP1NkP7MKuzrCmWY3zP/5ErH+wsFPPF/WqMcTgqwc/h0tVToN63zTzPlA+13LbVmG7Ah/NAa+Kw/5Cwxw8oTJO43XHbJeuHRxFLP5hnQG2yzkl5REe9lTDCNvc3zwzIdn94jfh/79OoICo=,iv:HWEgTEwPVckp1Xh97DVdMYEd1MI39KuCOKY/kK3ghlc=,tag:zb2d6q6mjO2yjgu2MXz19w==,type:str]
     pgp: []
-    encrypted_regex: ^(data|stringData)$
+    encryptedRegex: ^(data|stringData)$
     version: 3.7.3
