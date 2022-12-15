@@ -4,7 +4,7 @@ metadata:
     name: plex-token
     namespace: default
 type: Opaque
-data:
+stringData:
     PLEX_TOKEN: ENC[AES256_GCM,data:Yag4ZDja6IOUlZkUnhZGBaHoEvbtWTP7t+prGQ==,iv:rgmOHtl8EcNISVfWwsDe9QUmbEH+O936dmz9QNo+uxk=,tag:x6z7ngdFor1WfvUdyafzLg==,type:str]
 sops:
     kms: []
