@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Secret
 metadata:
     name: plex-token
-    namespace: default
+    namespace: flux-system
 type: Opaque
 stringData:
     PLEX_TOKEN: ENC[AES256_GCM,data:Yag4ZDja6IOUlZkUnhZGBaHoEvbtWTP7t+prGQ==,iv:rgmOHtl8EcNISVfWwsDe9QUmbEH+O936dmz9QNo+uxk=,tag:x6z7ngdFor1WfvUdyafzLg==,type:str]
