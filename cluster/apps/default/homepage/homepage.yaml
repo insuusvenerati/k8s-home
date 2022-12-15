@@ -75,6 +75,6 @@ spec:
               secretKeyRef:
                 name: plex-token
                 key: PLEX_TOKEN
-        volumeMounts:
-          - mountPath: /app/config
-            name: config-services
+        # volumeMounts:
+        #   - mountPath: /app/config
+        #     name: config-services
