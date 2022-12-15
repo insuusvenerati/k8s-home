@@ -11,7 +11,7 @@ spec:
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: jameswynn
+        name: jameswynn-fork
         namespace: flux-system
   interval: 6h0m0s
   values:
