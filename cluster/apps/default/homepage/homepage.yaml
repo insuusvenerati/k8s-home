@@ -34,6 +34,8 @@ spec:
         enabled: true
         size: 1Gi
         mountPath: /app/config
+      logs:
+        enabled: false
     ingress:
       main:
         enabled: true
