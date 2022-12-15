@@ -29,6 +29,11 @@ spec:
       name: homepage
       create: true
     enableRbac: true
+    persistence:
+      config:
+        enabled: true
+        size: 1Gi
+        mountPath: /app/config
     ingress:
       main:
         enabled: true
