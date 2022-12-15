@@ -27,30 +27,30 @@ spec:
           http:
             port: 32400
         externalTrafficPolicy: Local
-      dnla-tcp:
-        enabled: true
-        type: LoadBalancer
-        ports:
-          dnla-tcp:
-            enabled: true
-            port: 32469
-            protocol: TCP
-            targetPort: 32469
-        externalTrafficPolicy: Local
-      dnla-udp:
-        enabled: true
-        type: LoadBalancer
-        ports:
-          dnla-udp:
-            enabled: true
-            port: 1900
-            protocol: TCP
-            targetPort: 1900
-        externalTrafficPolicy: Local
+      # dnla-tcp:
+      #   enabled: true
+      #   type: LoadBalancer
+      #   ports:
+      #     dnla-tcp:
+      #       enabled: true
+      #       port: 32469
+      #       protocol: TCP
+      #       targetPort: 32469
+      #   externalTrafficPolicy: Local
+      # dnla-udp:
+      #   enabled: true
+      #   type: LoadBalancer
+      #   ports:
+      #     dnla-udp:
+      #       enabled: true
+      #       port: 1900
+      #       protocol: TCP
+      #       targetPort: 1900
+      #   externalTrafficPolicy: Local
     resources:
-      limits:
-        cpu: 2000m
-        memory: 2Gi
+      # limits:
+      #   cpu: 2000m
+      #   memory: 2Gi
       requests:
         cpu: 1000m
         memory: 1Gi
