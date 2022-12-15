@@ -63,9 +63,12 @@ spec:
           - -c
           - envsubst < /app/config/services.yaml > /tmp/services.yaml && mv /tmp/services.yaml /app/config/services.yaml
         image: bhgedigital/envsubst:v1.0-alpine3.6
-        envFrom:
-          - secretRef:
-              name: plex-token
+        env:
+          - name: PLEX_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: plex-token
+                key: token
         volumeMounts:
           - mountPath: /app/config
             name: config
