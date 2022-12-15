@@ -31,7 +31,7 @@ spec:
     enableRbac: true
     persistence:
       logs:
-        enabled: false
+        enabled: true
     ingress:
       main:
         enabled: true
