@@ -30,10 +30,6 @@ spec:
       create: true
     enableRbac: true
     persistence:
-      config:
-        enabled: true
-        size: 1Gi
-        mountPath: /app/config
       logs:
         enabled: false
     ingress:
@@ -77,6 +73,6 @@ spec:
               secretKeyRef:
                 name: plex-token
                 key: PLEX_TOKEN
-        # volumeMounts:
-        #   - mountPath: /app/config
-        #     name: config-services
+        volumeMounts:
+          - mountPath: /app/config
+            name: homepage-config
