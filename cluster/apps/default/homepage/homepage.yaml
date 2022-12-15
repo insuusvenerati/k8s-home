@@ -77,4 +77,4 @@ spec:
                 key: PLEX_TOKEN
         volumeMounts:
           - mountPath: /app/config
-            name: config
+            name: config-services
