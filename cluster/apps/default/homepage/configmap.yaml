@@ -17,16 +17,16 @@ data:
 
   services.yaml: |
     ---
-    # - Media:
-    #   - Plex:
-    #       href: https://plex.${SECRET_DOMAIN}
-    #       icon: plex.png
-    #       app: plex
-    #       namespace: default
-    #       widget:
-    #         type: plex
-    #         url: https://plex.${SECRET_DOMAIN}
-    #         key: ${PLEX_TOKEN}
+    - Media:
+      - Plex:
+          href: https://plex.${SECRET_DOMAIN}
+          icon: plex.png
+          app: plex
+          namespace: default
+          widget:
+            type: plex
+            url: https://plex.${SECRET_DOMAIN}
+            key: ${PLEX_TOKEN}
 
   settings.yaml: |
     ---

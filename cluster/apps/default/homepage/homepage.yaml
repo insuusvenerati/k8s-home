@@ -55,6 +55,3 @@ spec:
             secretName: homepage-tls
     config:
       useExistingConfigMap: homepage-config
-    # envFrom:
-    #   - secretRef:
-    #       name: plex-token
