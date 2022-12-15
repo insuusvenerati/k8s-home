@@ -54,36 +54,4 @@ spec:
               - *host
             secretName: homepage-tls
     config:
-      # useExistingConfigMap: homepage-config
-      services:
-        - Media:
-            - Plex:
-                href: https://plex.stiforr.com
-                icon: plex.png
-                app: plex
-                namespace: default
-                widget:
-                  type: plex
-                  url: https://plex.stiforr.com
-                  key: ${PLEX_TOKEN}
-      widgets:
-        - kubernetes:
-            cluster:
-              show: true
-              cpu: true
-              memory: true
-              showLabel: true
-              label: "cluster"
-            nodes:
-              show: true
-              cpu: true
-              memory: true
-              showLabel: true
-        - search:
-            provider: duckduckgo
-            target: _blank
-      kubernetes:
-        mode: cluster
-    envFrom:
-      - secretRef:
-          name: plex-token
+      useExistingConfigMap: homepage-config
