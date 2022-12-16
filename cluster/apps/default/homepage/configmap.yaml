@@ -27,9 +27,9 @@ data:
             type: plex
             url: http://plex-media-server:32400
             key: ${PLEX_TOKEN}
-      - Overseer:
+      - Overseerr:
           href: https://overseerr.${SECRET_DOMAIN}
-          icon: overseer.png
+          icon: overseerr.png
           app: overseerr
           namespace: default
           widget:
