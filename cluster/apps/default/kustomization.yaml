@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - namespace.yaml
   # - echo-server
-  - hajimari
+  # - hajimari
   - reloader
   # - cloudflared
   - plex
@@ -12,13 +12,13 @@ resources:
   - overseerr
   - radarr
   # - project-ozone
-  - atm7
+  # - atm7
   # - mastodon
   # - tdarr
   - jackett
   - home-assistant
   - sonarr
-  - vpn
+  # - vpn
   # - tubearchivist
   - uptime
   # - youtubedl-material
