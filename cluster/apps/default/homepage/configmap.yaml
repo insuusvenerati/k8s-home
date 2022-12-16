@@ -33,8 +33,8 @@ data:
           app: overseerr
           namespace: default
           widget:
-            type: overseer
-            url: http://overseer:5055
+            type: overseerr
+            url: http://overseerr:5055
             key: ${OVERSEER_TOKEN}
       - Radarr:
           href: https://radarr.${SECRET_DOMAIN}
