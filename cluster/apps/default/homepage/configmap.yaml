@@ -52,7 +52,7 @@ data:
           namespace: default
           widget:
             type: sonarr
-            url: https://sonarr.${SECRET_DOMAIN}
+            url: http://sonarr:8989
             key: ${SONARR_TOKEN}
 
   settings.yaml: |
