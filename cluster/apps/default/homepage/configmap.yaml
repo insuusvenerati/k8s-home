@@ -21,8 +21,6 @@ data:
       - Adguard:
           href: http://192.168.1.166
           icon: adguard.png
-          app: adguard
-          namespace: default
           widget:
             type: adguard
             url: http://192.168.1.166
@@ -31,8 +29,6 @@ data:
       - Proxmox:
           href: http://192.168.1.215:8006
           icon: proxmox.png
-          app: proxmox
-          namespace: default
           widget:
             type: proxmox
             url: http://192.168.1.215:8006
