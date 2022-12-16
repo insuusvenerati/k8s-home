@@ -30,7 +30,7 @@ data:
       - Overseer:
           href: https://overseerr.${SECRET_DOMAIN}
           icon: overseer.png
-          app: overseer
+          app: overseerr
           namespace: default
           widget:
             type: overseer
