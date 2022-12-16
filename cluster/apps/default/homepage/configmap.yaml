@@ -25,7 +25,7 @@ data:
           namespace: default
           widget:
             type: plex
-            url: https://plex.${SECRET_DOMAIN}
+            url: http://plex-media-server:32400
             key: ${PLEX_TOKEN}
       - Overseer:
           href: https://overseer.${SECRET_DOMAIN}
@@ -34,7 +34,7 @@ data:
           namespace: default
           widget:
             type: overseer
-            url: https://overseer.${SECRET_DOMAIN}
+            url: http://overseer:5055
             key: ${OVERSEER_TOKEN}
       - Radarr:
           href: https://radarr.${SECRET_DOMAIN}
@@ -43,7 +43,7 @@ data:
           namespace: default
           widget:
             type: radarr
-            url: https://radarr.${SECRET_DOMAIN}
+            url: http://radarr:7878
             key: ${RADARR_TOKEN}
       - Sonarr:
           href: https://sonarr.${SECRET_DOMAIN}
