@@ -28,7 +28,7 @@ data:
             url: http://plex-media-server:32400
             key: ${PLEX_TOKEN}
       - Overseer:
-          href: https://overseer.${SECRET_DOMAIN}
+          href: https://overseerr.${SECRET_DOMAIN}
           icon: overseer.png
           app: overseer
           namespace: default
