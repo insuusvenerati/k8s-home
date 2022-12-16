@@ -27,6 +27,33 @@ data:
             type: plex
             url: https://plex.${SECRET_DOMAIN}
             key: ${PLEX_TOKEN}
+      - Overseer:
+          href: https://overseer.${SECRET_DOMAIN}
+          icon: overseer.png
+          app: overseer
+          namespace: default
+          widget:
+            type: overseer
+            url: https://overseer.${SECRET_DOMAIN}
+            key: ${OVERSEER_TOKEN}
+      - Radarr:
+          href: https://radarr.${SECRET_DOMAIN}
+          icon: radarr.png
+          app: radarr
+          namespace: default
+          widget:
+            type: radarr
+            url: https://radarr.${SECRET_DOMAIN}
+            key: ${RADARR_TOKEN}
+      - Sonarr:
+          href: https://sonarr.${SECRET_DOMAIN}
+          icon: sonarr.png
+          app: sonarr
+          namespace: default
+          widget:
+            type: sonarr
+            url: https://sonarr.${SECRET_DOMAIN}
+            key: ${SONARR_TOKEN}
 
   settings.yaml: |
     ---
