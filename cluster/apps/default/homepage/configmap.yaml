@@ -17,6 +17,27 @@ data:
 
   services.yaml: |
     ---
+    - Home:
+      - Adguard:
+          href: http://192.168.1.166
+          icon: adguard.png
+          app: adguard
+          namespace: default
+          widget:
+            type: adguard
+            url: http://192.168.1.166
+            username: ${ADGUARD_USERNAME}
+            password: ${ADGUARD_PASSWORD}
+      - Proxmox:
+          href: http://192.168.1.215:8006
+          icon: proxmox.png
+          app: proxmox
+          namespace: default
+          widget:
+            type: proxmox
+            url: http://192.168.1.215:8006
+            username: ${PROXMOX_USERNAME}
+            password: ${PROXMOX_PASSWORD}
     - Media:
       - Plex:
           href: https://plex.${SECRET_DOMAIN}
