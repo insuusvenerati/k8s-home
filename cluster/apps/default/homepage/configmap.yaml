@@ -54,6 +54,16 @@ data:
             type: sonarr
             url: http://sonarr:8989
             key: ${SONARR_TOKEN}
+      - Qbittorrent:
+          href: https://qbittorrent.${SECRET_DOMAIN}
+          icon: qbittorrent.png
+          app: qbittorrent
+          namespace: default
+          widget:
+            type: qbittorrent
+            url: http://qbittorrent:8080
+            username: ${QBITTORRENT_USERNAME}
+            password: ${QBITTORRENT_PASSWORD}
 
   settings.yaml: |
     ---
