@@ -46,7 +46,7 @@ spec:
             secretName: radarr-tls
     persistence:
       downloads:
-        enabled: true
+        enabled: false
         mountPath: /downloads
         storageClass: nfs-client
         accessModes: ReadWriteMany
@@ -54,10 +54,10 @@ spec:
         subPath: downloads
       config:
         enabled: true
+        storageClass: nfs-client
       media:
         enabled: true
         mountPath: /media
         storageClass: nfs-client
         accessModes: ReadWriteMany
         existingClaim: media-pvc
-        subPath: plex/Movies
