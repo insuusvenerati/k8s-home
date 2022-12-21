@@ -59,3 +59,4 @@ spec:
         storageClass: nfs-client
         accessModes: ReadWriteMany
         existingClaim: media-pvc
+        subPath: plex/Movies
