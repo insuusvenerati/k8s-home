@@ -48,6 +48,7 @@ spec:
       downloads:
         enabled: true
         mountPath: /downloads
+        storageClass: nfs-client
         accessModes: ReadWriteMany
         existingClaim: media-pvc
         subPath: downloads
