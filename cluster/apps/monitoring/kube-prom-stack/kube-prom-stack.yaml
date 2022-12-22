@@ -89,13 +89,13 @@ spec:
       prometheusSpec:
         podMonitorSelectorNilUsesHelmValues: false
         serviceMonitorSelectorNilUsesHelmValues: false
-      resources:
-        requests:
-          cpu: 200m
-          memory: 128Mi
-        limits:
-          cpu: 1000m
-          memory: 512Mi
+        resources:
+          requests:
+            cpu: 200m
+            memory: 128Mi
+          limits:
+            cpu: 1000m
+            memory: 512Mi
     kubeEtcd:
       endpoints:
         - 192.168.1.242
