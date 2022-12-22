@@ -48,7 +48,7 @@ spec:
             secretName: sharry-tls
     config: |
       sharry.restserver {
-        base-url = "https://sharry.${DOMAIN}"
+        base-url = "https://sharry.${SECRET_DOMAIN}"
         logging {
           minimum-level = "Debug"
         }
