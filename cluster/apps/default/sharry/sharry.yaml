@@ -50,7 +50,7 @@ spec:
       sharry.restserver {
         base-url = "https://sharry.${SECRET_DOMAIN}"
         logging {
-          minimum-level = "Debug"
+          minimum-level = "Info"
         }
         bind {
           address = "0.0.0.0"
