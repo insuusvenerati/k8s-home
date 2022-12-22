@@ -18,9 +18,12 @@ spec:
     podAnnotations:
       configmap.reloader.stakater.com/reload: "sharry-config"
     persistence:
-      config:
+      database:
         enabled: true
         storageClass: nfs-client
+        accessMode: ReadWriteOnce
+        size: 20Gi
+        mountPath: /data
     image:
       repository: eikek0/sharry
       tag: "v1.11.0"
@@ -31,6 +34,9 @@ spec:
         annotations:
           hajimari.io/enable: "true"
           cert-manager.io/cluster-issuer: "letsencrypt-production"
+          nginx.ingress.kubernetes.io/client-body-buffer-size: "2048m"
+          nginx.ingress.kubernetes.io/proxy-body-size: "2048m"
+          nginx.ingress.kubernetes.io/proxy-buffering: "off"
         hosts:
           - host: &host sharry.${SECRET_DOMAIN}
             paths:
@@ -40,3 +46,27 @@ spec:
           - hosts:
               - *host
             secretName: sharry-tls
+    config: |
+      sharry.restserver {
+        base-url = "https://sharry.${DOMAIN}"
+        logging {
+          minimum-level = "Debug"
+        }
+        bind {
+          address = "0.0.0.0"
+          port = {{ .Values.service.main.ports.http.port }}
+        }
+        backend {
+          signup {
+            mode = "open"
+          }
+          jdbc {
+            url = "jdbc:h2:///data/sharry.db;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE"
+            user = "sa"
+            password = ""
+          }
+        }
+        webapp {
+          chunk-size: "100M"
+        }
+      }
