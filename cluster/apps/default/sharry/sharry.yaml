@@ -17,6 +17,10 @@ spec:
   values:
     podAnnotations:
       configmap.reloader.stakater.com/reload: "sharry-config"
+    persistence:
+      config:
+        enabled: true
+        storageClass: nfs-client
     image:
       repository: eikek0/sharry
       tag: "v1.11.0"
