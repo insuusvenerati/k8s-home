@@ -5,7 +5,7 @@ metadata:
   name: reloader
   namespace: kube-system
 spec:
-  interval: 15m
+  interval: 6h
   chart:
     spec:
       chart: reloader
@@ -14,13 +14,13 @@ spec:
         kind: HelmRepository
         name: stakater
         namespace: flux-system
-      interval: 15m
+      interval: 6h
   install:
     createNamespace: true
     remediation:
-      retries: 5
+      retries: 50
   upgrade:
     remediation:
-      retries: 5
+      retries: 50
   values:
     fullnameOverride: reloader
