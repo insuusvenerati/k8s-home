@@ -21,7 +21,7 @@ spec:
       repository: ghcr.io/jameswynn/homepage
       tag: kubernetes
     controller:
-      replicas: 2
+      replicas: 1
       strategy: RollingUpdate
       rollingUpdate:
         maxSurge: 25%
