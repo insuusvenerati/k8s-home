@@ -23,3 +23,7 @@ spec:
           cert-manager.io/cluster-issuer: letsencrypt-production
         hostname: loki.${SECRET_DOMAIN}
         tls: true
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
