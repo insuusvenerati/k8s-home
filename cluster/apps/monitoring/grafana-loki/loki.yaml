@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: loli
+  name: loki
   namespace: monitoring
 spec:
   chart:
@@ -22,3 +22,4 @@ spec:
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt-production
         hostname: loki.${SECRET_DOMAIN}
+        tls: true
