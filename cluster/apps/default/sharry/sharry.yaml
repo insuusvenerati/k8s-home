@@ -57,6 +57,14 @@ spec:
           port = {{ .Values.service.main.ports.http.port }}
         }
         backend {
+          auth {
+            fixed {
+              enabled = true
+              user = "admin"
+              password = "admin"
+              order = 10
+            }
+          }
           signup {
             mode = "open"
           }
