@@ -15,14 +15,6 @@ spec:
         namespace: flux-system
   interval: 6h0m0s
   values:
-    gateway:
-      ingress:
-        enabled: true
-        ingressClassName: nginx
-        annotations:
-          cert-manager.io/cluster-issuer: letsencrypt-production
-        hostname: loki.${SECRET_DOMAIN}
-        tls: true
     metrics:
       enabled: true
       serviceMonitor:
