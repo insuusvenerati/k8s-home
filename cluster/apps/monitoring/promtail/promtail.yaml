@@ -1,0 +1,16 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: promtail
+  namespace: monitoring
+spec:
+  chart:
+    spec:
+      chart: promtail
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+  interval: 6h0m0s
