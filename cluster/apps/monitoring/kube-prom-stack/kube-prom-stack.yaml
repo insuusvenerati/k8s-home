@@ -93,9 +93,9 @@ spec:
           requests:
             cpu: 500m
             memory: 512Mi
-          limits:
-            cpu: 1500m
-            memory: 2048Mi
+          # limits:
+          #   cpu: 1500m
+          #   memory: 2048Mi
     kubeEtcd:
       endpoints:
         - 192.168.1.242
