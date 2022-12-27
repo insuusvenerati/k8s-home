@@ -27,6 +27,8 @@ kind: Ingress
 metadata:
   name: home-assistant-ingress
   namespace: default
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
 spec:
   rules:
     - host: home-assistant.${SECRET_DOMAIN}
@@ -39,3 +41,8 @@ spec:
                 name: home-assistant-ingress
                 port:
                   number: 8123
+  tls:
+    - hosts:
+        - home-assistant.${SECRET_DOMAIN}
+      secretName: home-assistant-tls
+  ingressClassName: nginx
