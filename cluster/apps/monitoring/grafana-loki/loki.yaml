@@ -13,6 +13,12 @@ spec:
         kind: HelmRepository
         name: bitnami
         namespace: flux-system
+  install:
+    remediation:
+      retries: 50
+  upgrade:
+    remediation:
+      retries: 50
   interval: 6h0m0s
   values:
     metrics:
