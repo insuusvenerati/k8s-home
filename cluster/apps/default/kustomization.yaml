@@ -8,7 +8,7 @@ resources:
   - reloader
   # - cloudflared
   - plex
-  - qbitorrent
+  # - qbitorrent
   - overseerr
   - radarr
   # - project-ozone
