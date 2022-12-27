@@ -60,7 +60,7 @@ spec:
     env:
       TZ: America/Chicago
       PLEX_PREFERENCE_1: "FriendlyName=plex-kubernetes"
-      PLEX_CLAIM: "claim-f-kw1pkAPtNi9y-Ha5Fk"
+      PLEX_CLAIM: "claim-PhjboBSTSAHkGAJ5LzxM"
     ingress:
       main:
         enabled: true
