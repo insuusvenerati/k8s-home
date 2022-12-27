@@ -80,6 +80,7 @@ spec:
         enabled: true
         type: openvpn
         args:
+          - "-o"
           - "--block-ipv6"
         openvpn:
           image:
