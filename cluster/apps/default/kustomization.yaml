@@ -20,7 +20,7 @@ resources:
   - sonarr
   # - vpn
   # - tubearchivist
-  - uptime
+  # - uptime
   # - youtubedl-material
   - sharry
   - homepage
