@@ -2,15 +2,21 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: apps
+  name: apps-networking
   namespace: flux-system
 spec:
-  interval: 30m
-  path: ./cluster/apps
+  interval: 30m0s
+  path: ./cluster/apps/networking
   prune: true
   sourceRef:
     kind: GitRepository
     name: flux-cluster
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: cluster-settings
+      - kind: Secret
+        name: cluster-secrets
   dependsOn:
     - name: config
     - name: charts
@@ -18,11 +24,3 @@ spec:
     provider: sops
     secretRef:
       name: sops-age
-  postBuild:
-    substituteFrom:
-      - kind: ConfigMap
-        name: cluster-settings
-      - kind: Secret
-        name: cluster-secrets
-      # - kind: Secret
-      #   name: plex-token

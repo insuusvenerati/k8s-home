@@ -25,6 +25,40 @@
             path: /etc/hosts
             block: |
               127.0.1.1   {{ inventory_hostname }}
+    - name: Make sure dnf-plugins.core installed
+      dnf:
+        name: dnf-plugins-core
+        state: present
+
+    - name: Install docker repository
+      command: dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+
+    - name: Make sure docker from distro is not installed
+      yum:
+        name: "{{ item }}"
+        state: absent
+      with_items:
+        - docker
+        - docker-common
+        - container-selinux
+        - docker-selinux
+        - docker-engine
+
+    - name: Install docker
+      dnf:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - docker-ce
+        - python-pip
+
+    - name: Enable Docker
+      service: enabled=yes name=docker
+
+    - name: Start Docker
+      service: name=docker
+        state=restarted
+
     - name: Packages
       block:
         - name: Packages | Improve dnf performance

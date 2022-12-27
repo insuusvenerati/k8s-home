@@ -12,8 +12,8 @@ k3s_server:
     # kube-vip
     - "{{ kubevip_address }}"
   # Disable Docker - this will use the default containerd CRI
-  docker: false
-  node-taint: "node-role.kubernetes.io/master=:NoSchedule"
+  docker: true
+  # node-taint: "node-role.kubernetes.io/master=:NoSchedule"
   flannel-backend: "none" # This needs to be in quotes
   disable:
     # Disable flannel - replaced with Calico
