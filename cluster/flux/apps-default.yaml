@@ -16,6 +16,8 @@ spec:
     - name: charts
     - name: apps-storage
     - name: apps-networking
+    - name: apps-system
+    - name: apps-monitoring
   postBuild:
     substituteFrom:
       - kind: ConfigMap

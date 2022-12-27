@@ -14,10 +14,10 @@ k3s_server:
   # Disable Docker - this will use the default containerd CRI
   docker: true
   # node-taint: "node-role.kubernetes.io/master=:NoSchedule"
-  flannel-backend: "none" # This needs to be in quotes
+  flannel-backend: "vxlan" # This needs to be in quotes
   disable:
     # Disable flannel - replaced with Calico
-    - flannel
+    # - flannel
     # Disable traefik - replaced with ingress-nginx
     - traefik
     # Disable servicelb - replaced with metallb and install with Flux

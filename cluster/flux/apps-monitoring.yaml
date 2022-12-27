@@ -2,28 +2,27 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: apps-networking
+  name: apps-monitoring
   namespace: flux-system
 spec:
   interval: 30m0s
-  path: ./cluster/apps/networking
+  path: ./cluster/apps/monitoring
   prune: true
   sourceRef:
     kind: GitRepository
     name: flux-cluster
+  dependsOn:
+    - name: config
+    - name: charts
+    - name: apps-system
+    - name: apps-storage
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
   postBuild:
     substituteFrom:
       - kind: ConfigMap
         name: cluster-settings
       - kind: Secret
         name: cluster-secrets
-  dependsOn:
-    - name: config
-    - name: charts
-    - name: apps-system
-    - name: apps-storage
-    - name: apps-monitoring
-  decryption:
-    provider: sops
-    secretRef:
-      name: sops-age
