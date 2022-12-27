@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: home-assistant-ingress
+  namespace: default
+spec:
+  ports:
+    - port: 8123
+      targetPort: 8123
+      protocol: TCP
+  type: LoadBalancer
+  externalTrafficPolicy: Local
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: home-assistant-ingress
+  namespace: default
+subsets:
+  - addresses:
+      - ip: 192.168.1.170
+    ports:
+      - port: 8123
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: home-assistant-ingress
+  namespace: default
+spec:
+  rules:
+    - host: home-assistant.${SECRET_DOMAIN}
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: home-assistant-ingress
+                port:
+                  number: 8123

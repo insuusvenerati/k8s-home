@@ -24,3 +24,4 @@ resources:
   # - youtubedl-material
   - sharry
   - homepage
+  - ha-ingress
