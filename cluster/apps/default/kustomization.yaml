@@ -16,7 +16,7 @@ resources:
   # - mastodon
   # - tdarr
   - jackett
-  - home-assistant
+  # - home-assistant
   - sonarr
   # - vpn
   # - tubearchivist
