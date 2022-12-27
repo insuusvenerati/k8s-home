@@ -79,9 +79,9 @@ spec:
       vpn:
         enabled: true
         type: openvpn
-        args:
-          - "-o"
-          - "--block-ipv6"
+        # args:
+        #   - "-o"
+        #   - "--block-ipv6"
         openvpn:
           image:
             repository: dperson/openvpn-client
