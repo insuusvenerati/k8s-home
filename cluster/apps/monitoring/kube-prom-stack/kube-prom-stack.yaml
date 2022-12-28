@@ -77,6 +77,8 @@ spec:
       persistence:
         enabled: true
         size: 10Gi
+      serviceMonitor:
+        enabled: false
     prometheusOperator:
       resources:
         requests:
