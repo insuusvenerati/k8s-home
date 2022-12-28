@@ -2,11 +2,11 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: apps-default
+  name: apps-keda
   namespace: flux-system
 spec:
   interval: 30m0s
-  path: ./cluster/apps/default
+  path: ./cluster/apps/keda
   prune: true
   sourceRef:
     kind: GitRepository
@@ -18,7 +18,6 @@ spec:
     - name: apps-networking
     - name: apps-system
     - name: apps-monitoring
-    - name: apps-keda
   postBuild:
     substituteFrom:
       - kind: ConfigMap
