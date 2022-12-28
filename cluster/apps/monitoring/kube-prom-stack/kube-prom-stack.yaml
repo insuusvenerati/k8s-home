@@ -87,6 +87,7 @@ spec:
           memory: 256Mi
     prometheus:
       prometheusSpec:
+        retention: 7d
         podMonitorSelectorNilUsesHelmValues: false
         serviceMonitorSelectorNilUsesHelmValues: false
         resources:

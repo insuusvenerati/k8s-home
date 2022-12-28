@@ -2,28 +2,25 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: loki
-  namespace: monitoring
+  name: keda
+  namespace: keda
 spec:
   chart:
     spec:
-      chart: grafana-loki
+      chart: keda
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: bitnami
+        name: keda
         namespace: flux-system
-  install:
-    remediation:
-      retries: 50
-  upgrade:
-    remediation:
-      retries: 50
   interval: 6h0m0s
   values:
-    metrics:
-      enabled: true
-      serviceMonitor:
+    metricsServer:
+      replicaCount: 0
+    prometheus:
+      operator:
         enabled: true
-    gateway:
-      enabled: false
+        podMonitor:
+          enabled: true
+          interval: 30s
+          namespace: keda

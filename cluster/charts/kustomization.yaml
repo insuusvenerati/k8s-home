@@ -24,3 +24,4 @@ resources:
   - jameswynn.yaml
   - jameswynn-fork.yaml
   - truecharts.yaml
+  - keda.yaml

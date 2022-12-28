@@ -14,7 +14,7 @@ spec:
         name: k8s-at-home
         namespace: flux-system
       version: 13.5.2
-  interval: 10m0s
+  interval: 6h
   values:
     resources:
       limits:
@@ -41,7 +41,6 @@ spec:
         enabled: true
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt-production
-          hajimari.io/enable: "true"
         hosts:
           - host: &host qbittorrent.${SECRET_DOMAIN}
             paths:
