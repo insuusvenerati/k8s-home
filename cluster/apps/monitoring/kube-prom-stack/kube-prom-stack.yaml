@@ -92,6 +92,7 @@ spec:
         retention: 7d
         podMonitorSelectorNilUsesHelmValues: false
         serviceMonitorSelectorNilUsesHelmValues: false
+        scrapeInterval: 10m
         resources:
           requests:
             cpu: 500m
@@ -106,14 +107,14 @@ spec:
     kubeEtcd:
       endpoints:
         - 192.168.1.242
-        - 192.168.1.241
-        - 192.168.1.240
+        # - 192.168.1.241
+        # - 192.168.1.240
     kubeScheduler:
       enabled: false
       endpoints:
         - 192.168.1.242
-        - 192.168.1.241
-        - 192.168.1.240
+        # - 192.168.1.241
+        # - 192.168.1.240
       serviceMonitor:
         insecureSkipVerify: true
       service:
@@ -124,14 +125,14 @@ spec:
       enabled: false
       endpoints:
         - 192.168.1.242
-        - 192.168.1.241
-        - 192.168.1.240
+        # - 192.168.1.241
+        # - 192.168.1.240
     kubeControllerManager:
       enabled: false
       endpoints:
         - 192.168.1.242
-        - 192.168.1.241
-        - 192.168.1.240
+        # - 192.168.1.241
+        # - 192.168.1.240
       serviceMonitor:
         insecureSkipVerify: true
       service:
