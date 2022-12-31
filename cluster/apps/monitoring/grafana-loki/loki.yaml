@@ -26,4 +26,4 @@ spec:
       serviceMonitor:
         enabled: true
     gateway:
-      enabled: false
+      enabled: true
