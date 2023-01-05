@@ -104,6 +104,6 @@ spec:
               - sh
               - -c
               - if [ $(curl -s https://ipinfo.io/region) != 'Florida' ]; then exit 0; else exit $?; fi
-          initialDelaySeconds: 30
+          initialDelaySeconds: 15
           periodSeconds: 60
           failureThreshold: 1
