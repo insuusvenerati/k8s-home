@@ -19,7 +19,7 @@ spec:
       configmap.reloader.stakater.com/reload: "homepage-config"
     image:
       repository: ghcr.io/jameswynn/homepage
-      tag: kubernetes-release
+      tag: kubernetes
     controller:
       replicas: 1
       strategy: RollingUpdate
