@@ -16,6 +16,15 @@ spec:
       version: 13.5.2
   interval: 6h
   values:
+    service:
+      bittorrent:
+        enabled: true
+        type: LoadBalancer
+        ports:
+          bittorrent:
+            port: 54937
+            protocol: TCP
+            targetPort: 54937
     resources:
       limits:
         cpu: 500m
