@@ -49,8 +49,8 @@ spec:
       #   externalTrafficPolicy: Local
     resources:
       limits:
-        cpu: 2000m
-        memory: 2Gi
+        cpu: 10000m
+        memory: 3Gi
       requests:
         cpu: 1000m
         memory: 1Gi
