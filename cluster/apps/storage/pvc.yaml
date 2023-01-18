@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   capacity:
-    storage: 300Gi
+    storage: 500Gi
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
@@ -21,7 +21,7 @@ spec:
     - wsize=32768
   nfs:
     path: /srv/nfs
-    server: 192.168.1.185
+    server: 192.168.1.178
     readOnly: false
 ---
 apiVersion: v1
@@ -32,7 +32,7 @@ metadata:
 spec:
   resources:
     requests:
-      storage: 300Gi
+      storage: 500Gi
   accessModes:
     - ReadWriteMany
   storageClassName: nfs-client
