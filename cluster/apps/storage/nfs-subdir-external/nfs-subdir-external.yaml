@@ -17,7 +17,7 @@ spec:
   interval: 10m0s
   values:
     nfs:
-      server: 192.168.1.185
+      server: 192.168.1.178
       path: /srv/nfs
     storageClass:
       accessModes: ReadWriteMany
