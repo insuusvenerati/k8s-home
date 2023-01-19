@@ -48,6 +48,7 @@ spec:
     ingress:
       main:
         enabled: true
+        ingressClassName: nginx
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt-production
         hosts:
@@ -59,13 +60,6 @@ spec:
           - hosts:
               - *host
             secretName: qbittorrent-tls
-        resources:
-          requests:
-            cpu: 100m
-            memory: 128Mi
-          limits:
-            cpu: 200m
-            memory: 256Mi
     persistence:
       config:
         enabled: true
