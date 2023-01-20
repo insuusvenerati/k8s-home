@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: home-assistant-ingress
+  name: proxmox
   namespace: default
 spec:
   ports:
-    - port: 8123
-      targetPort: 8123
+    - port: 8006
+      targetPort: 8006
       protocol: TCP
   type: LoadBalancer
   externalTrafficPolicy: Local
@@ -14,35 +14,33 @@ spec:
 kind: Endpoints
 apiVersion: v1
 metadata:
-  name: home-assistant-ingress
+  name: proxmox
   namespace: default
 subsets:
   - addresses:
-      - ip: 192.168.1.136
+      - ip: 192.168.1.175
     ports:
-      - port: 8123
+      - port: 8006
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: home-assistant-ingress
+  name: proxmox
   namespace: default
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-production
 spec:
+  ingressClassName: nginx
   rules:
-    - host: home-assistant.${SECRET_DOMAIN}
+    - host: pve.${SECRET_DOMAIN}
       http:
         paths:
           - pathType: Prefix
             path: "/"
             backend:
               service:
-                name: home-assistant-ingress
+                name: proxmox
                 port:
-                  number: 8123
+                  number: 8006
   tls:
     - hosts:
-        - home-assistant.${SECRET_DOMAIN}
-      secretName: home-assistant-tls
-  ingressClassName: nginx
+        - pve.${SECRET_DOMAIN}
+      secretName: pve-tls

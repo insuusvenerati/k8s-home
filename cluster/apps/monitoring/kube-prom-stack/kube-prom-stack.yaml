@@ -106,13 +106,13 @@ spec:
       enabled: false
     kubeEtcd:
       endpoints:
-        - 192.168.1.242
+        - 192.168.1.177
         # - 192.168.1.241
         # - 192.168.1.240
     kubeScheduler:
       enabled: false
       endpoints:
-        - 192.168.1.242
+        - 192.168.1.177
         # - 192.168.1.241
         # - 192.168.1.240
       serviceMonitor:
@@ -124,13 +124,13 @@ spec:
     kubeProxy:
       enabled: false
       endpoints:
-        - 192.168.1.242
+        - 192.168.1.177
         # - 192.168.1.241
         # - 192.168.1.240
     kubeControllerManager:
       enabled: false
       endpoints:
-        - 192.168.1.242
+        - 192.168.1.177
         # - 192.168.1.241
         # - 192.168.1.240
       serviceMonitor:
