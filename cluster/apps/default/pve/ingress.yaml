@@ -27,6 +27,8 @@ kind: Ingress
 metadata:
   name: proxmox
   namespace: default
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
 spec:
   ingressClassName: nginx
   rules:
