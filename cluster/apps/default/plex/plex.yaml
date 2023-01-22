@@ -48,9 +48,9 @@ spec:
       #       targetPort: 1900
       #   externalTrafficPolicy: Local
     resources:
-      limits:
-        cpu: 10000m
-        memory: 3Gi
+      # limits:
+      #   cpu: 10000m
+      #   memory: 3Gi
       requests:
         cpu: 1000m
         memory: 1Gi
