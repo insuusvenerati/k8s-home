@@ -24,6 +24,7 @@ spec:
     image:
       repository: bbilly1/tubearchivist
       tag: "v0.3.2"
+      pullPolicy: Always
     env:
       TA_HOST: "tubearchivist.${SECRET_DOMAIN}"
       ES_URL: "http://tubearchivist-elasticsearch-master:9200"
