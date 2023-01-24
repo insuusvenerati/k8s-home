@@ -19,7 +19,7 @@ spec:
       TZ: America/Chicago
     hostNetwork: true
     image:
-      repository: jellyfin/jellyfin
+      repository: stiforr/jellyfin-ytmeta
       tag: 10.8.9
     ingress:
       main:
