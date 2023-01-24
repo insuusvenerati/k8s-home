@@ -5,7 +5,7 @@ metadata:
     namespace: default
 type: Opaque
 data:
-    password: ENC[AES256_GCM,data:5oyeuhK1uTKq+wbfzk+SkQ==,iv:pEbaU+/lHKOQPe3ZC0p8RGDHGo8PX8Ik0rp2fCYcp9A=,tag:+ldcTf0rzFdqDiEk9TRZTQ==,type:str]
+    ELASTIC_PASSWORD: ENC[AES256_GCM,data:xPsOk6rKPDBR1y1G1FOLmg==,iv:w8YpIEnYgdJbZB+6qpYuxZ8iY9yXu4IzgtiQwIJXhkg=,tag:XcqM4XwinEuXJutyq7MWpg==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -21,8 +21,8 @@ sops:
             d0dzNVJXT25Bd0I3eUtpdUNXVkdKN1kKS9eKSVAwdoEuSByiaBcDDKvJ5sISuDcV
             J7v011ngRM+6cBKdr3KlEd7WT5mh2OwzZNm4nJTWbl6ekg5sbAPwjg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2022-12-15T16:06:53Z"
-    mac: ENC[AES256_GCM,data:bICOdg4+pL7VTPM9X5QjYmxk8Z0RTQ9qq/JFq0zv+U/3hQ0NUITwGCB/JeGQpKpS/fa2IIVzYMjxTQKZu3Ltoha6G9Ay3ISSkyDo9kdXfVXUrevllg89hrHGGfSn7QfUbn3WNU657BepEiLQWUTDlsq6Wq49+ipVjqKvTH4c7rg=,iv:VHcFAHCrvvYrZHaUZzF1IR4RcSQnIYC9BFAd6MsuSxY=,tag:OISf5/8LbAAIBUGZ7kimTg==,type:str]
+    lastmodified: "2023-01-24T22:04:13Z"
+    mac: ENC[AES256_GCM,data:2VFSppFwvfNcntcgcDH8VBphiIJHaD7HdBoOAERxwqE0g0Cp4WXtZcXiO2RKPj64lfwDAioP3sl32pi0ER3etIKZwuOfUIdg/8cdZcJWAxb9x/CW6HRUOd9y1DnVSi3zQqy0hUZwJU8NjSn8LRPrB2gX2QIH4SyPYyza44lMzbw=,iv:i305SRKL43d8IyIwVL53F9PSXaUvjm73uSPZX3yGiT8=,tag:wtSG57X6RNUs+zpSeQH4gQ==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.7.3

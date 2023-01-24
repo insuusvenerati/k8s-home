@@ -32,10 +32,14 @@ spec:
     envFrom:
       - secretRef:
           name: tubearchivist-elasticsearch
-          key: ELASTIC_PASSWORD
     elasticsearch:
-      security:
-        existingSecret: tubearchivist-elasticsearch
+      extraEnvVars:
+        - name: ES_JAVA_OPTS
+          value: "-Xms512m -Xmx512m"
+        - name: ELASTIC_PASSWORD
+          value: "changeme"
+        - name: cluster.initial_master_nodes
+          value: ""
       resources:
         limits:
           cpu: 2000m
