@@ -21,6 +21,7 @@ spec:
     image:
       repository: stiforr/jellyfin-ytmeta
       tag: 10.8.9
+      pullPolicy: Always
     ingress:
       main:
         enabled: true
