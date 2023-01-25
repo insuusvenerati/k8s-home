@@ -52,3 +52,5 @@ spec:
         mountPath: /vids
         accessMode: ReadWriteMany
         subPath: jellyfin
+        existingClaim: media-pvc-ssd
+        size: 250Gi
