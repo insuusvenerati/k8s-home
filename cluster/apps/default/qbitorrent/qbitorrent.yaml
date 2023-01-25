@@ -68,6 +68,12 @@ spec:
         accessModes: ReadWriteMany
         existingClaim: media-pvc
         subPath: downloads
+      download:
+        enabled: true
+        mountPath: /download
+        accessModes: ReadWriteMany
+        existingClaim: media-pvc-ssd
+        subPath: downloads
       media:
         enabled: false
       shared:
