@@ -51,6 +51,7 @@ spec:
         subPath: youtube
       config:
         enabled: true
+        storageClass: nfs-client-ssd
     ingress:
       main:
         enabled: true
