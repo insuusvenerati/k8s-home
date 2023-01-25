@@ -1,0 +1,38 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nfs-subdir-external-ssd
+  namespace: storage
+spec:
+  chart:
+    spec:
+      chart: nfs-subdir-external-provisioner
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: nfs-subdir-external
+        namespace: flux-system
+      version: 4.0.17
+  interval: 10m0s
+  values:
+    nfs:
+      server: 192.168.1.230
+      path: /srv/nfs
+    storageClass:
+      accessModes:
+        - ReadWriteMany
+        - ReadWriteOnce
+        - ReadOnlyMany
+      name: nfs-client-ssd
+    resources:
+      limits:
+        cpu: 100m
+        memory: 128Mi
+      requests:
+        cpu: 100m
+        memory: 128Mi
+  install:
+    createNamespace: true
+    remediation:
+      retries: 5
