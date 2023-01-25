@@ -38,6 +38,11 @@ spec:
           storageClass: nfs-client-ssd
           accessModes:
             - ReadWriteMany
+      data:
+        persistence:
+          storageClass: nfs-client-ssd
+          accessModes:
+            - ReadWriteMany
       extraEnvVars:
         - name: ES_JAVA_OPTS
           value: "-Xms512m -Xmx512m"
