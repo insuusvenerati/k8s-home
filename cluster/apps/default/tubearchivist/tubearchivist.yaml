@@ -33,6 +33,11 @@ spec:
       - secretRef:
           name: tubearchivist-elasticsearch
     elasticsearch:
+      master:
+        persistence:
+          storageClass: nfs-client-ssd
+          accessModes:
+            - ReadWriteMany
       extraEnvVars:
         - name: ES_JAVA_OPTS
           value: "-Xms512m -Xmx512m"
@@ -52,6 +57,9 @@ spec:
       config:
         enabled: true
         storageClass: nfs-client-ssd
+      cache:
+        storageClass: nfs-client-ssd
+        accessMode: ReadWriteMany
     ingress:
       main:
         enabled: true
