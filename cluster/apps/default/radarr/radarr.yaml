@@ -61,3 +61,10 @@ spec:
         storageClass: nfs-client
         accessModes: ReadWriteMany
         existingClaim: media-pvc
+      vids:
+        enabled: true
+        mountPath: /vids
+        storageClass: nfs-client-ssd
+        accessMode: ReadWriteMany
+        existingClaim: media-pvc-ssd
+        size: 250Gi
