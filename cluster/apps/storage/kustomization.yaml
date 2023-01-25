@@ -5,3 +5,4 @@ resources:
   - nfs-subdir-external
   - pvc.yaml
   - nfs-subdir-external-ssd
+  - pvc-ssd.yaml
