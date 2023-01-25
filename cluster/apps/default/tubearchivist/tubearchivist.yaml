@@ -59,7 +59,7 @@ spec:
     persistence:
       youtube:
         enabled: true
-        existingClaim: media-pvc
+        existingClaim: media-pvc-ssd
         subPath: youtube
       config:
         enabled: true
