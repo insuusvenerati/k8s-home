@@ -50,5 +50,5 @@ spec:
         enabled: true
         storageClass: "nfs-client-ssd"
         mountPath: /vids
-        accessModes: ReadWriteMany
+        accessMode: ReadWriteMany
         subPath: jellyfin
