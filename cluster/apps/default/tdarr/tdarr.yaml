@@ -21,6 +21,19 @@ spec:
     remediation:
       retries: 50
   values:
+    podSecurityContext:
+      runAsUser: 568
+      runAsGroup: 568
+      fsGroup: 568
+      #   # Hardware acceleration using an Intel iGPU w/ QuickSync
+      #   # These IDs below should be matched to your `video` and `render` group on the host
+      #   # To obtain those IDs run the following grep statement on the host:
+      #   # $ cat /etc/group | grep "video\|render"
+      #   # video:x:44:
+      #   # render:x:109:
+      supplementalGroups:
+        - 39
+        - 105
     image:
       repository: haveagitgat/tdarr
       tag: 2.00.18.2
@@ -97,10 +110,10 @@ spec:
         storageClass: nfs-client
         accessMode: ReadWriteMany
         existingClaim: media-pvc
-      # preset:
-      #   enabled: true
-      #   mountPath: /app/presets
-      #   type: configMap
-      #   configMapName: tdarr-presets
-      #   name: tdarr-presets
-      #   readOnly: false
+      vids:
+        enabled: true
+        mountPath: /vids
+        storageClass: nfs-client-ssd
+        accessMode: ReadWriteMany
+        existingClaim: media-pvc-ssd
+        size: 250Gi
