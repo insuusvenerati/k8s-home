@@ -47,10 +47,16 @@ spec:
         enabled: true
         storageClass: "nfs-client"
       vids:
+        enabled: false
+        storageClass: "nfs-client-ssd"
+        mountPath: /vids
+        accessMode: ReadWriteMany
+        existingClaim: media-pvc-ssd
+        size: 250Gi
+      videos:
         enabled: true
         storageClass: "nfs-client-ssd"
         mountPath: /vids
         accessMode: ReadWriteMany
-        subPath: jellyfin
         existingClaim: media-pvc-ssd
         size: 250Gi
