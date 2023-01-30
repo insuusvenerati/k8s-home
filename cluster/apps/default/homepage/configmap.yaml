@@ -19,31 +19,22 @@ data:
     ---
     - Home:
       - Adguard:
-          href: http://192.168.1.166
+          href: http://192.168.1.136
           icon: adguard.png
           widget:
             type: adguard
-            url: http://192.168.1.166
+            url: http://192.168.1.136
             username: ${ADGUARD_USERNAME}
             password: ${ADGUARD_PASSWORD}
       - Proxmox:
-          href: https://192.168.1.215:8006
+          href: https://192.168.1.175:8006
           icon: proxmox.png
           widget:
             type: proxmox
-            url: https://192.168.1.215:8006
+            url: https://192.168.1.175:8006
             username: ${PROXMOX_USERNAME}
             password: ${PROXMOX_PASSWORD}
     - Media:
-      - Plex:
-          href: https://plex.${SECRET_DOMAIN}
-          icon: plex.png
-          app: plex
-          namespace: default
-          widget:
-            type: plex
-            url: http://plex-media-server:32400
-            key: ${PLEX_TOKEN}
       - Overseerr:
           href: https://overseerr.${SECRET_DOMAIN}
           icon: overseerr.png

@@ -63,7 +63,7 @@ spec:
         storageClass: nfs-client
         mountPath: /config
       downloads:
-        enabled: true
+        enabled: false
         mountPath: /downloads
         accessModes: ReadWriteMany
         existingClaim: media-pvc
