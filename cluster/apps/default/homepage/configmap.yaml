@@ -19,11 +19,11 @@ data:
     ---
     - Home:
       - Adguard:
-          href: https://home-assistant.stiforr.com
+          href: https://home-assistant.stiforr.com/a0d7b954_adguard/dashboard
           icon: adguard.png
           widget:
             type: adguard
-            url: https://home-assistant.stiforr.com
+            url: https://192.168.1.136:8123/a0d7b954_adguard/dashboard
             username: ${ADGUARD_USERNAME}
             password: ${ADGUARD_PASSWORD}
       - Proxmox:
