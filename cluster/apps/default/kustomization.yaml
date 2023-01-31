@@ -27,3 +27,4 @@ resources:
   - ha-ingress
   - pve
   - jellyfin
+  - dashy
