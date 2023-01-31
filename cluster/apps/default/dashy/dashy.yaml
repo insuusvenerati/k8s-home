@@ -29,7 +29,7 @@ spec:
     persistence:
       config:
         enabled: true
-        mountPath: /public
+        mountPath: /app/public
         storageClass: nfs-client-ssd
     ingress:
       main:
