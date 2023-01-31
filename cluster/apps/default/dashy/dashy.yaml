@@ -32,7 +32,7 @@ spec:
         ports:
           http:
             port: 80
-    configMap:
+    configMaps:
       config:
         enabled: true
         data:
