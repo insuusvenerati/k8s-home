@@ -23,7 +23,7 @@ resources:
   # - uptime
   # - youtubedl-material
   - sharry
-  - homepage
+  # - homepage
   - ha-ingress
   - pve
   - jellyfin
