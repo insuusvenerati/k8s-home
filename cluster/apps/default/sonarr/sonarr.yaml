@@ -23,9 +23,11 @@ spec:
   values:
     env:
       TZ: America/Chicago
+      PUID: 568
+      PGID: 568
     image:
-      repository: ghcr.io/onedr0p/sonarr
-      tag: 3.0.9.1549
+      repository: ghcr.io/linuxserver/sonarr
+      tag: develop-version-4.0.0.369
     ingress:
       main:
         enabled: true
