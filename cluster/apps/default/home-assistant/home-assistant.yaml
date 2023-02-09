@@ -54,7 +54,7 @@ spec:
       enabled: true
       image:
         repository: bitnami/postgresql
-        tag: 14.1.0
+        tag: 14.7.0
       auth:
         database: home-assistant
         existingSecret: home-assistant-postgresql
