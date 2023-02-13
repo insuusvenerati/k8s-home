@@ -32,6 +32,10 @@ spec:
     envFrom:
       - secretRef:
           name: tubearchivist-elasticsearch
+    redis:
+      master:
+        persistence:
+          storageClass: nfs-client-ssd
     elasticsearch:
       master:
         persistence:
@@ -62,7 +66,7 @@ spec:
         existingClaim: media-pvc-ssd
         subPath: youtube
       config:
-        enabled: true
+        enabled: false
         storageClass: nfs-client-ssd
       cache:
         storageClass: nfs-client-ssd
