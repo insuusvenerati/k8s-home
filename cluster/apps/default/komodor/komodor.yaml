@@ -3,7 +3,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: k8s-watcher
-  namespace: default
+  namespace: komodor
 spec:
   chart:
     spec:
@@ -13,6 +13,9 @@ spec:
         kind: HelmRepository
         name: komodorio
         namespace: flux-system
+  targetNamespace: komodor
+  install:
+    createNamespace: true
   interval: 6h0m0s
   values:
     existingSecret: k8s-watcher-secret
