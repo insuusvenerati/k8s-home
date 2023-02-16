@@ -25,3 +25,4 @@ resources:
   - jameswynn-fork.yaml
   - truecharts.yaml
   - keda.yaml
+  - komodorio.yaml
