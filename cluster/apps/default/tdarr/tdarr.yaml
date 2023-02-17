@@ -36,7 +36,7 @@ spec:
         - 105
     image:
       repository: haveagitgat/tdarr
-      tag: 2.00.18.2
+      tag: 2.00.19.1
     resources:
       requests:
         cpu: 1000m
