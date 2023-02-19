@@ -24,7 +24,7 @@ spec:
   values:
     image:
       repository: stiforr/tubearchivist
-      tag: "custom-0.3.3"
+      tag: "v0.3.3"
       pullPolicy: Always
     env:
       TA_HOST: "tubearchivist.${SECRET_DOMAIN}"
