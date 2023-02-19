@@ -23,7 +23,7 @@ spec:
       retries: 30
   values:
     image:
-      repository: stiforr/tubearchivist
+      repository: bbilly1/tubearchivist
       tag: "v0.3.3"
       pullPolicy: Always
     env:
