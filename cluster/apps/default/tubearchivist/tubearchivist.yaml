@@ -52,6 +52,9 @@ spec:
             - ReadWriteMany
       global:
         storageClass: nfs-client-ssd
+      extraConfig:
+        path:
+          repo: /usr/share/elasticsearch/data/snapshot
       extraEnvVars:
         - name: path.repo
           value: /usr/share/elasticsearch/data/snapshot
