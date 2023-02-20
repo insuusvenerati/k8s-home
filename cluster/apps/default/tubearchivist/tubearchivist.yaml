@@ -30,7 +30,6 @@ spec:
       TA_HOST: "tubearchivist.${SECRET_DOMAIN}"
       ES_URL: "http://tubearchivist-elasticsearch:9200"
       ELASTIC_PASSWORD: "changeme"
-      path.repo: /usr/share/elasticsearch/data/snapshot
     envFrom:
       - secretRef:
           name: tubearchivist-elasticsearch
@@ -39,6 +38,8 @@ spec:
         persistence:
           storageClass: nfs-client-ssd
     elasticsearch:
+      image:
+        tag: 8.6.0
       master:
         persistence:
           storageClass: nfs-client-ssd
