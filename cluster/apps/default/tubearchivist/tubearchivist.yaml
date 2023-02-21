@@ -40,6 +40,10 @@ spec:
       extraEnvs:
         - name: "discovery.type"
           value: "single-node"
+        - name: "cluster.initial_master_nodes"
+          value: []
+        - name: "discovery.seed_hosts"
+          value: []
       createCert: false
       esJavaOpts: "-Xms1g -Xmx1g"
       replicas: 1
