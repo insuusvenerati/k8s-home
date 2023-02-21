@@ -35,39 +35,25 @@ spec:
         persistence:
           storageClass: nfs-client-ssd
     elasticsearch:
-      image:
-        repository: elasticsearch
-        tag: 8.6.0
-      master:
-        persistence:
-          storageClass: nfs-client-ssd
-          accessModes:
-            - ReadWriteMany
-      data:
-        persistence:
-          storageClass: nfs-client-ssd
-          accessModes:
-            - ReadWriteMany
-      global:
-        storageClass: nfs-client-ssd
-      # extraConfig:
-      #   # path:
-      #   #   repo: /usr/share/elasticsearch/data/snapshot
-      #   cluster:
-      #     initial_master_nodes: 1
-      extraEnvVars:
-        - name: path.repo
-          value: /usr/share/elasticsearch/data/snapshot
-        - name: ES_JAVA_OPTS
-          value: "-Xms512m -Xmx512m"
-        - name: ELASTIC_PASSWORD
-          value: "changeme"
-        # - name: cluster.initial_master_nodes
-        #   value: ""
+      esJavaOpts: "-Xms1g -Xmx1g"
+      replicas: 1
+      minimumMasterNodes: 1
+      image: "docker.elastic.co/elasticsearch/elasticsearch"
+      imageTag: "8.5.1"
+      imagePullPolicy: "IfNotPresent"
       resources:
+        requests:
+          cpu: "1000m"
+          memory: "1Gi"
         limits:
-          cpu: 2000m
-          memory: 1024Mi
+          cpu: "1000m"
+          memory: "2Gi"
+      volumeClaimTemplate:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: "nfs-client-ssd"
+        resources:
+          requests:
+            storage: 2Gi
     persistence:
       youtube:
         enabled: true
