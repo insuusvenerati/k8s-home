@@ -37,9 +37,6 @@ spec:
     elasticsearch:
       secret:
         enabled: false
-      extraEnvs:
-        - name: ELASTIC_PASSWORD
-          value: "changeme"
       esConfig:
         elasticsearch.yml: |
           xpack.security.enabled: false
