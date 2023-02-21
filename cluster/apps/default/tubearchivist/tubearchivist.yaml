@@ -54,8 +54,8 @@ spec:
       global:
         storageClass: nfs-client-ssd
       extraConfig:
-        path:
-          repo: /usr/share/elasticsearch/data/snapshot
+        # path:
+        #   repo: /usr/share/elasticsearch/data/snapshot
         cluster:
           initial_master_nodes: 1
       extraEnvVars:
