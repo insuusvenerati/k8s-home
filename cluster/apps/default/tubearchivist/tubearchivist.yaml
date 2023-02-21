@@ -35,8 +35,10 @@ spec:
         persistence:
           storageClass: nfs-client-ssd
     elasticsearch:
+      secret:
+        enabled: false
       extraEnvs:
-        - name: ELASTICSEARCH_PASSWORD
+        - name: ELASTIC_PASSWORD
           value: "changeme"
       esConfig:
         elasticsearch.yml: |
@@ -44,6 +46,7 @@ spec:
           xpack.security.transport.ssl.enabled: false
           xpack.security.http.ssl.enabled: false
           discovery.type: single-node
+          cluster.initial_master_nodes: []
       createCert: false
       esJavaOpts: "-Xms1g -Xmx1g"
       replicas: 1
