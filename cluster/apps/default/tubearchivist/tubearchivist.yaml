@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: stiforr
         namespace: flux-system
-      version: 0.8.1
+      version: 0.8.2
   interval: 6h0m0s
   install:
     remediation:
@@ -65,8 +65,8 @@ spec:
           value: "-Xms512m -Xmx512m"
         - name: ELASTIC_PASSWORD
           value: "changeme"
-        - name: cluster.initial_master_nodes
-          value: ""
+        # - name: cluster.initial_master_nodes
+        #   value: ""
       resources:
         limits:
           cpu: 2000m
