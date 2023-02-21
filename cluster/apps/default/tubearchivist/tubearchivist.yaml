@@ -42,8 +42,6 @@ spec:
           xpack.security.enabled: false
           xpack.security.transport.ssl.enabled: false
           xpack.security.http.ssl.enabled: false
-          discovery.type: single-node
-          cluster.initial_master_nodes: []
       createCert: false
       esJavaOpts: "-Xms1g -Xmx1g"
       replicas: 1
