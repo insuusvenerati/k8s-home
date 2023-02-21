@@ -28,7 +28,7 @@ spec:
       pullPolicy: Always
     env:
       TA_HOST: "tubearchivist.${SECRET_DOMAIN}"
-      ES_URL: "http://tubearchivist-elasticsearch:9200"
+      ES_URL: "http://elasticsearch-master:9200"
       ELASTIC_PASSWORD: "changeme"
     redis:
       master:
