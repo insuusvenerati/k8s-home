@@ -30,9 +30,6 @@ spec:
       TA_HOST: "tubearchivist.${SECRET_DOMAIN}"
       ES_URL: "http://tubearchivist-elasticsearch:9200"
       ELASTIC_PASSWORD: "changeme"
-    envFrom:
-      - secretRef:
-          name: tubearchivist-elasticsearch
     redis:
       master:
         persistence:
