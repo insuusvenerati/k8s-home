@@ -22,10 +22,6 @@ spec:
     remediation:
       retries: 30
   values:
-    image:
-      repository: bbilly1/tubearchivist
-      tag: "v0.3.3"
-      pullPolicy: Always
     env:
       TA_HOST: "tubearchivist.${SECRET_DOMAIN}"
       TA_PASSWORD: "changeme"
