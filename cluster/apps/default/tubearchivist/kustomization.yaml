@@ -2,4 +2,4 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - tubearchivist.yaml
-  - tubearchivist-elasticsearch.sops.yaml
+  # - tubearchivist-elasticsearch.sops.yaml

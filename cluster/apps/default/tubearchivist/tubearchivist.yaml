@@ -28,42 +28,20 @@ spec:
       pullPolicy: Always
     env:
       TA_HOST: "tubearchivist.${SECRET_DOMAIN}"
+      TA_PASSWORD: "changeme"
+      TA_USERNAME: "admin"
       ES_URL: "http://elasticsearch-master:9200"
       ELASTIC_PASSWORD: "changeme"
+      REDIS_HOST: "tubearchivist-redis-master"
     redis:
       master:
         persistence:
           storageClass: nfs-client-ssd
     elasticsearch:
-      secret:
-        enabled: false
-      extraEnvs:
-        - name: "discovery.type"
-          value: "single-node"
-        - name: "cluster.initial_master_nodes"
-          value: ""
-        - name: "discovery.seed_hosts"
-          value: ""
-      createCert: false
-      esJavaOpts: "-Xms1g -Xmx1g"
-      replicas: 1
-      minimumMasterNodes: 1
-      image: "docker.elastic.co/elasticsearch/elasticsearch"
-      imageTag: "8.5.1"
-      imagePullPolicy: "IfNotPresent"
-      resources:
-        requests:
-          cpu: "1000m"
-          memory: "1Gi"
-        limits:
-          cpu: "1000m"
-          memory: "2Gi"
-      volumeClaimTemplate:
-        accessModes: ["ReadWriteOnce"]
-        storageClassName: "nfs-client-ssd"
-        resources:
-          requests:
-            storage: 2Gi
+      master:
+        persistence:
+          storageClass: nfs-client-ssd
+
     persistence:
       youtube:
         enabled: true
