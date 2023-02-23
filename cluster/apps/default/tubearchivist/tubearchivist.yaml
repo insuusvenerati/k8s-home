@@ -37,6 +37,9 @@ spec:
         persistence:
           storageClass: nfs-client-ssd
     elasticsearch:
+      image:
+        repository: elasticsearch
+        tag: 8.6.0
       master:
         persistence:
           storageClass: nfs-client-ssd
