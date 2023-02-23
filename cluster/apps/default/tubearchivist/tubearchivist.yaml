@@ -24,7 +24,7 @@ spec:
   values:
     image:
       repository: stiforr/tubearchivist
-      tag: custom
+      tag: custom-0.3.3-testing
     env:
       TA_HOST: "tubearchivist.${SECRET_DOMAIN}"
       TA_PASSWORD: "changeme"
