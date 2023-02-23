@@ -45,6 +45,10 @@ spec:
           value: /usr/share/elasticsearch/data/snapshot
       extraConfig:
         path.repo: /usr/share/elasticsearch/data/snapshot
+      volumePermissions:
+        enabled: true
+      global:
+        kibanaEnabled: true
 
     persistence:
       youtube:
