@@ -42,9 +42,9 @@ spec:
           storageClass: nfs-client-ssd
       extraEnvVars:
         - name: path.repo
-          value: /bitnami/elasticsearch/data/snapshot
+          value: /usr/share/elasticsearch/data/snapshot
       extraConfig:
-        path.repo: /bitnami/elasticsearch/data/snapshot
+        path.repo: /usr/share/elasticsearch/data/snapshot
 
     persistence:
       youtube:
