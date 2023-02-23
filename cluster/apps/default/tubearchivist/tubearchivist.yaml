@@ -22,6 +22,9 @@ spec:
     remediation:
       retries: 30
   values:
+    image:
+      repository: stiforr/tubearchivist
+      tag: custom
     env:
       TA_HOST: "tubearchivist.${SECRET_DOMAIN}"
       TA_PASSWORD: "changeme"
