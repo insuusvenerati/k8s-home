@@ -47,9 +47,13 @@ spec:
         - name: path.repo
           value: /usr/share/elasticsearch/data/snapshot
       extraConfig:
-        path.repo: /usr/share/elasticsearch/data/snapshot
-        xpack.security.enabled: false
-        discovery.type: single-node
+        path:
+          repo: /usr/share/elasticsearch/data/snapshot
+        xpack:
+          security:
+            enabled: false
+        discovery:
+          type: single-node
       volumePermissions:
         enabled: true
       global:
