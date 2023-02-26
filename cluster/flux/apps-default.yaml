@@ -18,7 +18,7 @@ spec:
     - name: apps-networking
     - name: apps-system
     - name: apps-monitoring
-    - name: apps-keda
+    # - name: apps-keda
   postBuild:
     substituteFrom:
       - kind: ConfigMap
