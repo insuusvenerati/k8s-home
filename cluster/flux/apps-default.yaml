@@ -17,7 +17,7 @@ spec:
     - name: apps-storage
     - name: apps-networking
     - name: apps-system
-    - name: apps-monitoring
+    # - name: apps-monitoring
     # - name: apps-keda
   postBuild:
     substituteFrom:
