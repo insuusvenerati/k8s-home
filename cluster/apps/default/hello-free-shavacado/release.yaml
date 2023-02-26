@@ -1,0 +1,36 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: hello-free-shavacado
+  namespace: default
+spec:
+  chart:
+    spec:
+      chart: hello-free-shavacado
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: stiforr
+        namespace: flux-system
+  interval: 6h0m0s
+  values:
+    image:
+      repository: stiforr/hello-free-shavacado-new
+      tag: express-2
+      pullPolicy: IfNotPresent
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: nginx
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-production
+        hosts:
+          - host: &host hello-free-shavacado.${SECRET_DOMAIN}
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - host:
+              - *host
+            secretName: hello-free-shavacado-tls
