@@ -13,6 +13,13 @@ spec:
         kind: HelmRepository
         name: stiforr
         namespace: flux-system
+  install:
+    createNamespace: true
+    remediation:
+      retries: 50
+  upgrade:
+    remediation:
+      retries: 50
   interval: 6h0m0s
   values:
     image:
