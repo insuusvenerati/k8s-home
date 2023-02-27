@@ -41,3 +41,4 @@ spec:
           - host:
               - *host
             secretName: hello-free-shavacado-tls
+    envFrom: []
