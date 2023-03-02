@@ -51,7 +51,7 @@ spec:
       enabled: true
       image:
         repository: grafana/grafana
-        tag: 9.3.6
+        tag: 9.4.3
       ingress:
         enabled: true
         ingressClassName: nginx
