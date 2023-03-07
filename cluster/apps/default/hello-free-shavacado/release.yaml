@@ -24,7 +24,7 @@ spec:
   values:
     image:
       repository: stiforr/hello-free-shavacado-new
-      tag: express-2
+      tag: develop-d00c7cc25c5c576a1195f8dade1fe114ab80395a
       pullPolicy: IfNotPresent
     ingress:
       main:
