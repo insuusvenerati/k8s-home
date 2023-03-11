@@ -17,7 +17,7 @@ spec:
   values:
     image:
       repository: ghcr.io/linuxserver/bazarr
-      tag: 1.1.4
+      tag: 1.2.0
       pullPolicy: IfNotPresent
     global:
       fullnameOverride: bazarr
