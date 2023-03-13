@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: nfs-subdir-external
         namespace: flux-system
-      version: 4.0.17
+      version: 4.0.18
   interval: 10m0s
   values:
     nfs:
