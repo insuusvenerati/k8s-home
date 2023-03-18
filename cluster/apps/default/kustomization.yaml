@@ -19,7 +19,7 @@ resources:
   # - home-assistant
   - sonarr
   # - vpn
-  # - tubearchivist
+  - tubearchivist
   # - uptime
   # - youtubedl-material
   - sharry

@@ -13,7 +13,6 @@ spec:
         kind: HelmRepository
         name: stiforr
         namespace: flux-system
-      version: 0.8.4
   interval: 6h0m0s
   install:
     remediation:
@@ -24,7 +23,7 @@ spec:
   values:
     image:
       repository: stiforr/tubearchivist
-      tag: custom-0.3.3-testing
+      tag: custom-0.3.4
     env:
       TA_HOST: "tubearchivist.${SECRET_DOMAIN}"
       TA_PASSWORD: "changeme"
@@ -38,26 +37,14 @@ spec:
           storageClass: nfs-client-ssd
     elasticsearch:
       image:
-        repository: elasticsearch
+        repository: bitnami/elasticsearch
         tag: 8.6.0
       master:
         persistence:
           storageClass: nfs-client-ssd
-      extraEnvVars:
-        - name: path.repo
-          value: /usr/share/elasticsearch/data/snapshot
       extraConfig:
         path:
           repo: /usr/share/elasticsearch/data/snapshot
-        xpack:
-          security:
-            enabled: false
-        discovery:
-          type: single-node
-      volumePermissions:
-        enabled: true
-      global:
-        kibanaEnabled: true
 
     persistence:
       youtube:
