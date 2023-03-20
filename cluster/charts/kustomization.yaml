@@ -26,3 +26,4 @@ resources:
   - truecharts.yaml
   - keda.yaml
   - komodorio.yaml
+  - minio.yaml

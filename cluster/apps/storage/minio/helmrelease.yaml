@@ -1,0 +1,56 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: minio
+  namespace: storage
+spec:
+  chart:
+    spec:
+      chart: minio
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: minio
+  interval: 6h0m0s
+  values:
+    image:
+      repository: quay.io/minio/minio
+      tag: RELEASE.2023-03-13T19-46-17Z
+    mode: standalone
+    replicas: 1
+    persistence:
+      storageClass: nfs-client-ssd
+      size: 100Gi
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-production
+        external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+        external-dns/is-public: "true"
+      hosts:
+        - host: s3.${SECRET_DOMAIN}
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - hosts:
+            - s3.${SECRET_DOMAIN}
+          secretName: minio-tls
+    consoleIngress:
+      enabled: true
+      ingressClassName: nginx
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-production
+        external-dns/is-public: "false"
+      hosts:
+        - minio.${SECRET_DOMAIN}
+      tls:
+        - secretName: minio-console-tls
+          hosts:
+            - minio.${SECRET_DOMAIN}
+    resources:
+      requests:
+        memory: 1Gi
+    users: []
