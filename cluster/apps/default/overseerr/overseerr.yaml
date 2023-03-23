@@ -39,7 +39,7 @@ spec:
       config:
         enabled: true
         mountPath: /app/config
-        storageClass: nfs-client
+        storageClass: nfs-client-ssd
     ingress:
       main:
         enabled: true
