@@ -40,6 +40,7 @@ spec:
         enabled: true
         mountPath: /app/config
         storageClass: nfs-client-ssd
+        size: 10Gi
     ingress:
       main:
         enabled: true
