@@ -31,7 +31,7 @@ spec:
         memory: 512Mi
     image:
       repository: ghcr.io/sct/overseerr
-      tag: 1.32.5
+      tag: a4d07f5afab613317d96c9c6e9b47157a5a28986
       pullPolicy: IfNotPresent
     env:
       TZ: America/Chicago
