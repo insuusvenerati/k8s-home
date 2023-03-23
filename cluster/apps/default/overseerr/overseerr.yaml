@@ -30,8 +30,8 @@ spec:
         cpu: 250m
         memory: 512Mi
     image:
-      repository: ghcr.io/sct/overseerr
-      tag: a4d07f5afab613317d96c9c6e9b47157a5a28986
+      repository: fallenbagel/jellyseerr
+      tag: develop
       pullPolicy: IfNotPresent
     env:
       TZ: America/Chicago
