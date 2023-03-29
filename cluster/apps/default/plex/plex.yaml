@@ -18,15 +18,7 @@ spec:
   values:
     # nodeSelector:
     #   cpus: "24"
-    service:
-      main:
-        enabled: true
-        type: LoadBalancer
-        primary: true
-        ports:
-          http:
-            port: 32400
-        externalTrafficPolicy: Local
+    hostNetwork: true
     resources:
       # limits:
       #   cpu: 10000m
