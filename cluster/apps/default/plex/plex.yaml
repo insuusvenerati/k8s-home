@@ -40,7 +40,7 @@ spec:
     env:
       TZ: America/Chicago
       PLEX_PREFERENCE_1: "FriendlyName=plex-kubernetes"
-      PLEX_CLAIM: "claim-tv6NCVD-fUmerPt9XzFW"
+      PLEX_CLAIM: "claim-_6szWy_SDVsFj2Gb8jVy"
     ingress:
       main:
         enabled: true
@@ -76,10 +76,12 @@ spec:
       media:
         enabled: true
         mountPath: /media
-        storageClass: nfs-client
+        storageClass: nfs-client-ssd
         accessModes: ReadWriteMany
-        existingClaim: media-pvc
-        subPath: plex
+        existingClaim: media-pvc-ssd
       config:
         enabled: true
         mountPath: /config
+        storageClass: nfs-client-ssd
+        accessModes: ReadWriteOnce
+        size: 5Gi
