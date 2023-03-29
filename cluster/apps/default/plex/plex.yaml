@@ -27,26 +27,6 @@ spec:
           http:
             port: 32400
         externalTrafficPolicy: Local
-      # dnla-tcp:
-      #   enabled: true
-      #   type: LoadBalancer
-      #   ports:
-      #     dnla-tcp:
-      #       enabled: true
-      #       port: 32469
-      #       protocol: TCP
-      #       targetPort: 32469
-      #   externalTrafficPolicy: Local
-      # dnla-udp:
-      #   enabled: true
-      #   type: LoadBalancer
-      #   ports:
-      #     dnla-udp:
-      #       enabled: true
-      #       port: 1900
-      #       protocol: TCP
-      #       targetPort: 1900
-      #   externalTrafficPolicy: Local
     resources:
       # limits:
       #   cpu: 10000m
@@ -56,11 +36,11 @@ spec:
         memory: 1Gi
     image:
       repository: ghcr.io/onedr0p/plex
-      tag: 1.30.1.6562-915986d62
+      tag: 1.31.3.6868-28fc46b27
     env:
       TZ: America/Chicago
       PLEX_PREFERENCE_1: "FriendlyName=plex-kubernetes"
-      PLEX_CLAIM: "claim-CEyF-giUxYgg1BX4ew2K"
+      PLEX_CLAIM: "claim-tv6NCVD-fUmerPt9XzFW"
     ingress:
       main:
         enabled: true
