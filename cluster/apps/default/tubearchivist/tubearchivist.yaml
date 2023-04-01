@@ -38,7 +38,7 @@ spec:
     elasticsearch:
       image:
         repository: bitnami/elasticsearch
-        tag: 8.6.0
+        tag: 8.7.0
       master:
         persistence:
           storageClass: nfs-client-ssd
