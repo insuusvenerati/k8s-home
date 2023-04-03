@@ -31,4 +31,4 @@ resources:
   - bazarr
   - komodor
   # - hello-free-shavacado
-  # - jellyfin-ingress
+  - jellyfin-ingress
