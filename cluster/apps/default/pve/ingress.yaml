@@ -44,6 +44,13 @@ spec:
                 name: proxmox
                 port:
                   number: 8006
+          - pathType: Prefix
+            path: "/pve2"
+            backend:
+              service:
+                name: proxmox
+                port:
+                  number: 8006
   tls:
     - hosts:
         - pve.${SECRET_DOMAIN}
