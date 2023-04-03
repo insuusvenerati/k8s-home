@@ -26,8 +26,9 @@ resources:
   # - homepage
   - ha-ingress
   - pve
-  - jellyfin
+  # - jellyfin
   - dashy
   - bazarr
   - komodor
   # - hello-free-shavacado
+  - jellyfin-internal
