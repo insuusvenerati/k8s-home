@@ -32,19 +32,19 @@ metadata:
     external-dns.alpha.kubernetes.io/target: ipv4.${SECRET_DOMAIN}
     external-dns/is-public: "false"
     # nginx.ingress.kubernetes.io/proxy-redirect: "off"
-    nginx.ingress.kubernetes.io/server-snippet: |
-      location / {
-          proxy_http_version 1.1;
-          proxy_set_header Upgrade $http_upgrade;
-          proxy_set_header Connection "upgrade";
-          proxy_pass https://localhost:8006;
-          proxy_buffering off;
-          client_max_body_size 0;
-          proxy_connect_timeout  3600s;
-          proxy_read_timeout  3600s;
-          proxy_send_timeout  3600s;
-          send_timeout  3600s;
-      }
+    # nginx.ingress.kubernetes.io/server-snippet: |
+    #   location / {
+    #       proxy_http_version 1.1;
+    #       proxy_set_header Upgrade $http_upgrade;
+    #       proxy_set_header Connection "upgrade";
+    #       proxy_pass https://proxmox:8006;
+    #       proxy_buffering off;
+    #       client_max_body_size 0;
+    #       proxy_connect_timeout  3600s;
+    #       proxy_read_timeout  3600s;
+    #       proxy_send_timeout  3600s;
+    #       send_timeout  3600s;
+    #   }
 spec:
   ingressClassName: nginx
   rules:
