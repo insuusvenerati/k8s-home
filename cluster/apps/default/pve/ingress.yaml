@@ -30,7 +30,8 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
     external-dns.alpha.kubernetes.io/target: ipv4.${SECRET_DOMAIN}
-    external-dns/is-public: "true"
+    external-dns/is-public: "false"
+    nginx.ingress.kubernetes.io/proxy-redirect: "off"
 spec:
   ingressClassName: nginx
   rules:
@@ -39,13 +40,6 @@ spec:
         paths:
           - pathType: Prefix
             path: "/"
-            backend:
-              service:
-                name: proxmox
-                port:
-                  number: 8006
-          - pathType: Prefix
-            path: "/pve2"
             backend:
               service:
                 name: proxmox
