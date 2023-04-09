@@ -5,8 +5,8 @@ metadata:
   namespace: default
 spec:
   ports:
-    - port: 443
-      targetPort: 443
+    - port: 9443
+      targetPort: 9443
 ---
 kind: Endpoints
 apiVersion: v1
@@ -40,7 +40,7 @@ spec:
               service:
                 name: nextcloud
                 port:
-                  number: 443
+                  number: 9443
   tls:
     - hosts:
         - nextcloud.${SECRET_DOMAIN}
