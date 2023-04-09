@@ -32,4 +32,4 @@ resources:
   - komodor
   # - hello-free-shavacado
   - jellyfin-ingress
-  # - nextcloud
+  - nextcloud
