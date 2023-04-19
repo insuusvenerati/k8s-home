@@ -27,7 +27,7 @@ spec:
       PGID: 568
     image:
       repository: ghcr.io/linuxserver/sonarr
-      tag: develop-version-4.0.0.429
+      tag: develop-version-4.0.0.449
     ingress:
       main:
         enabled: true

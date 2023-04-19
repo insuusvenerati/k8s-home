@@ -29,7 +29,7 @@ resources:
   # - jellyfin
   - dashy
   - bazarr
-  - komodor
+  # - komodor
   # - hello-free-shavacado
   - jellyfin-ingress
   - nextcloud
