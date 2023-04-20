@@ -24,10 +24,12 @@ spec:
   values:
     env:
       TZ: America/Chicago
+      PUID: 1000
+      GUID: 1000
     image:
-      repository: ghcr.io/onedr0p/radarr
+      repository: lscr.io/linuxserver/radarr
       pullPolicy: IfNotPresent
-      tag: 4.4.4.7068
+      tag: version-4.4.4.7068
     ingress:
       main:
         enabled: true
@@ -63,7 +65,7 @@ spec:
         existingClaim: media-pvc
       vids:
         enabled: true
-        mountPath: /vids
+        mountPath: /data
         storageClass: nfs-client-ssd
         accessMode: ReadWriteMany
         existingClaim: media-pvc-ssd
