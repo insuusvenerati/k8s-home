@@ -56,6 +56,8 @@ spec:
         proxy-body-size: "100M"
         ssl-protocols: "TLSv1.3 TLSv1.2"
         use-forwarded-headers: "true"
+        http-snippet: "proxy_cache_path /tmp/nginx_cache levels=1:2 keys_zone=static-cache:10m max_size=10g  inactive=60m use_temp_path=off;"
+
       metrics:
         enabled: false
         service:

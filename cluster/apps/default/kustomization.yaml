@@ -33,3 +33,4 @@ resources:
   # - hello-free-shavacado
   - jellyfin-ingress
   - nextcloud
+  - demo-app

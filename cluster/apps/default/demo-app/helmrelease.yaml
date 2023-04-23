@@ -1,0 +1,45 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: demo-app
+  namespace: default
+spec:
+  chart:
+    spec:
+      chart: demo-app
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: stiforr
+        namespace: flux-system
+  interval: 6h0m0s
+  releaseName: demo-app
+  values:
+    securityContext:
+      capabilities:
+        drop:
+          - ALL
+      readOnlyRootFilesystem: true
+      runAsNonRoot: true
+      runAsUser: 1000
+    ingress:
+      enabled: true
+      className: "nginx"
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-production
+        external-dns.alpha.kubernetes.io/target: ipv4.${SECRET_DOMAIN}
+        external-dns/is-public: "true"
+        nginx.ingress.kubernetes.io/configuration-snippet: |
+          proxy_cache static-cache;
+          proxy_cache_valid any 60m;
+          add_header X-Cache-Status $upstream_cache_status;
+      hosts:
+        - host: demo-app.${SECRET_DOMAIN}
+          paths:
+            - path: /
+              pathType: ImplementationSpecific
+      tls:
+        - hosts:
+            - demo-app.${SECRET_DOMAIN}
+          secretName: demo-app-tls
