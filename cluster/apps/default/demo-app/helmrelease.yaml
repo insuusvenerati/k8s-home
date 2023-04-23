@@ -14,15 +14,14 @@ spec:
         name: stiforr
         namespace: flux-system
   interval: 6h0m0s
-  releaseName: demo-app
   values:
-    securityContext:
-      capabilities:
-        drop:
-          - ALL
-      readOnlyRootFilesystem: true
-      runAsNonRoot: true
-      runAsUser: 1000
+    # securityContext:
+    #   capabilities:
+    #     drop:
+    #       - ALL
+    #   readOnlyRootFilesystem: true
+    #   runAsNonRoot: true
+    #   runAsUser: 1000
     ingress:
       enabled: true
       className: "nginx"
