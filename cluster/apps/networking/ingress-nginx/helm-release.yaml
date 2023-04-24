@@ -59,11 +59,11 @@ spec:
         http-snippet: "proxy_cache_path /tmp/nginx_cache levels=1:2 keys_zone=static-cache:10m max_size=10g  inactive=60m use_temp_path=off;"
 
       metrics:
-        enabled: false
+        enabled: true
         service:
           annotations:
             prometheus.io/scrape: "true"
-            prometheus.io/port: "10254"
+            # prometheus.io/port: "10254"
             # prometheus.io/scheme: http
         serviceMonitor:
           enabled: true
