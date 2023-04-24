@@ -73,3 +73,5 @@ spec:
         accessMode: ReadWriteMany
         existingClaim: media-pvc-ssd
         size: 250Gi
+    metrics:
+      enabled: true
