@@ -34,4 +34,4 @@ resources:
   - jellyfin-ingress
   - nextcloud
   - demo-app
-  - cloudron-ingress
+  # - cloudron-ingress
