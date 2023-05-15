@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: lidarr
+  namespace: default
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: lidarr
+  namespace: default
+subsets:
+  - addresses:
+      - ip: 192.168.1.168
+    ports:
+      - port: 8686
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lidarr
+  namespace: default
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    external-dns.alpha.kubernetes.io/target: ipv4.${SECRET_DOMAIN}
+    external-dns/is-public: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: lidarr.${SECRET_DOMAIN}
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: lidarr
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - lidarr.${SECRET_DOMAIN}
+      secretName: lidarr-tls

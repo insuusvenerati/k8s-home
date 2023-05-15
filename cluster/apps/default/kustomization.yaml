@@ -35,3 +35,4 @@ resources:
   - nextcloud
   - demo-app
   # - cloudron-ingress
+  - lidarr-ingress
