@@ -18,7 +18,7 @@ spec:
   values:
     image:
       repository: lscr.io/linuxserver/jackett
-      tag: 0.20.3949
+      tag: 0.20.4185
     env:
       TZ: America/Chicago
     ingress:
