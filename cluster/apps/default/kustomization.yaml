@@ -7,7 +7,7 @@ resources:
   # - hajimari
   - reloader
   # - cloudflared
-#   - plex
+  #   - plex
   # - qbitorrent
   - overseerr
   - radarr
@@ -36,3 +36,4 @@ resources:
   - demo-app
   # - cloudron-ingress
   - lidarr-ingress
+  - plex-ingress
