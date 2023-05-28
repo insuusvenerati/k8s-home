@@ -35,7 +35,7 @@ spec:
       http:
         paths:
           - pathType: Prefix
-            path: "/"
+            path: "/web"
             backend:
               service:
                 name: plex
