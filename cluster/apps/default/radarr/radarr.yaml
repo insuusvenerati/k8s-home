@@ -29,7 +29,7 @@ spec:
     image:
       repository: lscr.io/linuxserver/radarr
       pullPolicy: IfNotPresent
-      tag: version-4.4.4.7068
+      tag: version-4.5.2.7388
     ingress:
       main:
         enabled: true
