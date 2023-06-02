@@ -27,3 +27,4 @@ resources:
   - keda.yaml
   - komodorio.yaml
   - minio.yaml
+  - weave.yaml

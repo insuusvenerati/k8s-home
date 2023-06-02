@@ -37,3 +37,4 @@ resources:
   # - cloudron-ingress
   - lidarr-ingress
   - plex-ingress
+  - ww-gitops
